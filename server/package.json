@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.students.cs.ubc.ca/CPSC304-2023W-T2/project_d3o3o_q2l0q_y7b5p.git"
+  },
+  "author": "frank, philip, ethan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
