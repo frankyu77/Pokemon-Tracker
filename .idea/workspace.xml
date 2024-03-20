@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="setup basic stuff for react with the dependencies and folders, etc.">
-      <change afterPath="$PROJECT_DIR$/server/appservice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/appController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/appservice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" />
-    </list>
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="teting backend stuff" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,7 +95,7 @@
       <workItem from="1710544747956" duration="375000" />
       <workItem from="1710723736818" duration="2191000" />
       <workItem from="1710737840891" duration="4677000" />
-      <workItem from="1710883264105" duration="5681000" />
+      <workItem from="1710883264105" duration="5751000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -125,7 +113,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710740203256</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="teting backend stuff">
+      <option name="closed" value="true" />
+      <created>1710889460462</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1710889460462</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=";oilj" />
     <MESSAGE value="setup basic stuff for react with the dependencies and folders, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="setup basic stuff for react with the dependencies and folders, etc." />
+    <MESSAGE value="teting backend stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="teting backend stuff" />
   </component>
 </project>
