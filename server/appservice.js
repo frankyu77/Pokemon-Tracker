@@ -3,8 +3,8 @@
 async insertPokemon(name, type1, type2, specialattack, caught_since, pid) {
     return await withOracleDB(async (connection) => {
         const result = await connection.execute(
-            'INSERT INTO POKEMON_CAUGHT (name, type1, specialattack, caught_since, pid) ' +
-            'values(:name, :type1, :type2, :specialattacl, :caught_since, :pid)',
+            'INSERT INTO POKEMON_CAUGHT (name, type1, type2, specialattack, caught_since, pid) ' +
+            'values(:name, :type1, :type2, :specialattack, :caught_since, :pid)',
             [name, type1, type2, specialattack, caught_since, pid],
             {autoCommit : true}
         );
