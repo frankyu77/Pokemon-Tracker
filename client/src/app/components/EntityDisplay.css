@@ -1,12 +1,15 @@
-#entity {
+.entity {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 30%;
+    margin: 10px 10px 10px 10px;
 }
 
 #name {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: red;
+    text-transform:capitalize;
 }
 
 #data {
@@ -18,6 +21,10 @@
     justify-content: center;
 }
 
-#data td {
+#data td, #data th{
     width: 100%;
+}
+
+#buttons button{
+    width: 50%;
 }
