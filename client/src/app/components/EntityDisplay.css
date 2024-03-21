@@ -1,0 +1,23 @@
+#entity {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#name {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+}
+
+#data {
+    border: 2px solid black;
+}
+
+#data tr {
+    display: flex;
+    justify-content: center;
+}
+
+#data td {
+    width: 100%;
+}
