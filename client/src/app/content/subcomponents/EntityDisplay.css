@@ -1,15 +1,14 @@
 .entity {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
     display: flex;
-    justify-content: center;
     flex-direction: column;
     width: 30%;
     margin: 10px 10px 10px 10px;
 }
 
 #name {
-    text-transform:capitalize;
+    text-transform: capitalize;
 }
 
 #data {
@@ -21,10 +20,11 @@
     justify-content: center;
 }
 
-#data td, #data th{
+#data td,
+#data th {
     width: 100%;
 }
 
-#buttons button{
+#buttons button {
     width: 50%;
 }

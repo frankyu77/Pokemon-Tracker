@@ -1,4 +1,5 @@
 import './EntityDisplay.css'
+import { Link } from 'react-router-dom'
 
 function EntityDisplay(props) {
     return (
@@ -6,7 +7,9 @@ function EntityDisplay(props) {
             <h2 id="name">{props.name}</h2>
             <table id="data"> {populateTable(props.attributes, props.data)} </table>
             <div id="buttons">
-                <button id="add-button">Add</button>
+                <Link to='/addpage' state={props.name}>
+                    <button id="add-button">Add</button>
+                </Link>
                 <button id="remove-button">Remove</button>
             </div>
         </div>
