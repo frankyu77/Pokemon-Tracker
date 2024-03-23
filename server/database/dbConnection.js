@@ -10,13 +10,15 @@ class dbConnection {
     }
 
     async connect() {
+         console.log("connection");
         try {
-                this.connection = await this.oracledb.getConnection({
+            console.log("try");
+            this.connection = await this.oracledb.getConnection({
                 user: "ora_kyu16",
                 password: "a70917505",
                 connectString: "dbhost.students.cs.ubc.ca:1522/stu"
             });
-                console.log("Connected to database");
+            console.log("Connected to database");
             return this.connection;
         } catch (error) {
             console.error("Error connecting to Oracle DB:", error);
@@ -38,3 +40,18 @@ class dbConnection {
 
 }
 module.exports = dbConnection;
+
+const lol = require('./dbConnection');
+
+// Create an instance of the dbConnection class
+const connection = new lol();
+
+// Call the connect method to establish a database connection
+connection.connect()
+    .then(() => {
+        console.log('Database connection established successfully!');
+        // You can perform additional operations after the connection is established
+    })
+    .catch(error => {
+        console.error('Error connecting to the database:', error);
+    });
