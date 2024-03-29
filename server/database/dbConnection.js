@@ -7,6 +7,7 @@ class dbConnection {
         this.oracledb = oracledb;
         this.oracledb.outFormat = oracledb.OUT_FORMAT_OBJECT;
         this.connection = null;
+
     }
 
     async connect() {
@@ -14,7 +15,8 @@ class dbConnection {
                 this.connection = await this.oracledb.getConnection({
                 user: "ora_kyu16",
                 password: "a70917505",
-                connectString: "dbhost.students.cs.ubc.ca:1522/stu"
+                connectString: "dbhost.students.cs.ubc.ca:1522/stu",
+                    autoCommit: true
             });
                 console.log("Connected to database");
             return this.connection;

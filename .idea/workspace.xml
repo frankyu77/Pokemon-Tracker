@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="" />
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbConnection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gameService.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,12 +33,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "pmacau"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pmacau&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -71,6 +78,7 @@
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "database.query.execution",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -85,12 +93,16 @@
       <recent name="$PROJECT_DIR$/server/database" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="gameClass.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/gameClass.js" working-dir="$PROJECT_DIR$/src">
+  <component name="RunManager" selected="Node.js.main.js">
+    <configuration name="gameClass.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="gameClass.js" working-dir="$PROJECT_DIR$/src">
+      <method v="2" />
+    </configuration>
+    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/src/main.js" working-dir="$PROJECT_DIR$/client/src">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.gameClass.js" />
       </list>
     </recent_temporary>
@@ -116,7 +128,9 @@
       <workItem from="1710544747956" duration="375000" />
       <workItem from="1710723736818" duration="2191000" />
       <workItem from="1710737840891" duration="2683000" />
-      <workItem from="1711055320956" duration="3769000" />
+      <workItem from="1711055320956" duration="4585000" />
+      <workItem from="1711574522729" duration="324000" />
+      <workItem from="1711753228033" duration="3154000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -142,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711069418233</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="execute error function">
+      <option name="closed" value="true" />
+      <created>1711069728766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711069728766</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
