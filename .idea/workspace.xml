@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="workspace">
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="asdfasf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbConnection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +85,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/server/tables" />
       <recent name="$PROJECT_DIR$/server/database" />
     </key>
@@ -116,6 +117,8 @@
       <workItem from="1711055320956" duration="3769000" />
       <workItem from="1711089708692" duration="4762000" />
       <workItem from="1711144899318" duration="2715000" />
+      <workItem from="1711486209529" duration="720000" />
+      <workItem from="1711663788399" duration="2636000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />

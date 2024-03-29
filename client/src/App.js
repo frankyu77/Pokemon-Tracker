@@ -38,7 +38,8 @@ function App() {
     const pokemonType1 = document.getElementById("insertPokemonType1").value;
     const pokemonType2 = document.getElementById("insertPokemonType2").value;
     const pokemonSpecialAttack = document.getElementById("insertPokemonAttack").value;
-    const pokemonCaughtDate = document.getElementById("insertPokemonCaughtDate").value;
+    const pokemonCaughtDateStr = document.getElementById("insertPokemonCaughtDate").value;
+    const pokemonCaughtDate = new Date(pokemonCaughtDateStr);
     const pokemonID = document.getElementById("insertPokemonID").value;
     console.log(pokemonName);
     console.log(pokemonType1);
@@ -49,7 +50,7 @@ function App() {
 
 
     try {
-      const response = await fetch('/insert-pokemon-caught', {
+      const response = await fetch('http://localhost:3001/insert-pokemon-caught', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -59,7 +60,7 @@ function App() {
           type1: pokemonType1,
           type2: pokemonType2,
           specialattack: pokemonSpecialAttack,
-          caught_since: pokemonCaughtDate,
+          caught_since: pokemonCaughtDate.toLocaleDateString('en-GB'),
           pid: pokemonID
         })
       })
