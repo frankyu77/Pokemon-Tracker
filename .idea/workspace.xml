@@ -6,17 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/gymMasterService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymMasterService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/gymService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/itemHasService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/itemHasService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/leadsToService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/leadsToService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/questService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/questService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/regionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/roleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/roleService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/trainerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/trainerService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/typeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/typeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
