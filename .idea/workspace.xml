@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/tables/gymService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/questService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/roleService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/trainerService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/typeService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/pokemonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/pokemonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gymMasterService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymMasterService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gymService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/itemHasService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/itemHasService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/leadsToService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/leadsToService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/questService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/questService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/regionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/roleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/roleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/trainerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/trainerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/typeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/typeService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +139,7 @@
       <workItem from="1711753228033" duration="4153000" />
       <workItem from="1711757407826" duration="597000" />
       <workItem from="1711758170441" duration="536000" />
-      <workItem from="1711758716971" duration="2272000" />
+      <workItem from="1711758716971" duration="7296000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -194,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711759837959</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed commit.">
+      <option name="closed" value="true" />
+      <created>1711761230404</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711761230404</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

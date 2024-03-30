@@ -1,6 +1,16 @@
 const pokemonService = require('../../server/tables/pokemonService');
 const gameService = require('../../server/tables/gameService');
 const peopleService = require('../../server/tables/peopleService');
+const typeService = require('../../server/tables/typeService');
+const trainerService = require('../../server/tables/trainerService');
+const roleService = require('../../server/tables/roleService');
+const regionService = require('../../server/tables/regionService');
+const questService = require('../../server/tables/questService');
+const gymService = require('../../server/tables/gymService');
+const gymMasterService = require('../../server/tables/gymMasterService');
+const itemHasService = require('../../server/tables/itemHasService');
+const leadsToService = require('../../server/tables/leadsToService');
+const NPC_livesInService = require('../../server/tables/NPC_livesInService');
 const dbConnection = require('../../server/database/dbConnection');
 
 async function test() {
@@ -22,6 +32,8 @@ async function test() {
     // await appServicePeople.removePeople(27); // works
 
     // testing typeService
+
+
 
     //testing trainerService
 
