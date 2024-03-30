@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/sqlCommands.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbConnection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,60 +64,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.dbConnection.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.game.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.gameClass.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.main.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.pokemonService.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;philip-testing&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.dbConnection.js.executor": "Run",
+    "Node.js.game.js.executor": "Run",
+    "Node.js.gameClass.js.executor": "Run",
+    "Node.js.main.js.executor": "Run",
+    "Node.js.pokemonService.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging philip-testing",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "OracleSqlPlus"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/server/tables" />
       <recent name="$PROJECT_DIR$/server/database" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.main.js">
-    <configuration name="gameClass.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="gameClass.js" working-dir="$PROJECT_DIR$/src">
-      <method v="2" />
-    </configuration>
-    <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/src/main.js" working-dir="$PROJECT_DIR$/client/src">
+  <component name="RunManager">
+    <configuration name="gameClass.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/gameClass.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.main.js" />
         <item itemvalue="Node.js.gameClass.js" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,12 +125,12 @@
       <workItem from="1710544747956" duration="375000" />
       <workItem from="1710723736818" duration="2191000" />
       <workItem from="1710737840891" duration="2683000" />
-      <workItem from="1711055320956" duration="4585000" />
-      <workItem from="1711574522729" duration="324000" />
-      <workItem from="1711753228033" duration="4153000" />
-      <workItem from="1711757407826" duration="597000" />
-      <workItem from="1711758170441" duration="536000" />
-      <workItem from="1711758716971" duration="7296000" />
+      <workItem from="1711055320956" duration="3769000" />
+      <workItem from="1711089708692" duration="4762000" />
+      <workItem from="1711144899318" duration="2715000" />
+      <workItem from="1711486209529" duration="720000" />
+      <workItem from="1711663788399" duration="4976000" />
+      <workItem from="1711833756098" duration="658000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -154,47 +156,31 @@
       <option name="project" value="LOCAL" />
       <updated>1711069418233</updated>
     </task>
-    <task id="LOCAL-00004" summary="execute error function">
+    <task id="LOCAL-00004" summary="connected front end to back end">
       <option name="closed" value="true" />
-      <created>1711069728766</created>
+      <created>1711671909671</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1711069728766</updated>
+      <updated>1711671909671</updated>
     </task>
-    <task id="LOCAL-00005" summary="attempting to update SQL Database">
+    <task id="LOCAL-00005" summary="data added is actually added to the databse, also added sql file for all the scripts">
       <option name="closed" value="true" />
-      <created>1711756616236</created>
+      <created>1711773737750</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1711756616236</updated>
+      <updated>1711773737750</updated>
     </task>
-    <task id="LOCAL-00006" summary="fixed commit.">
+    <task id="LOCAL-00006" summary="deleted some files">
       <option name="closed" value="true" />
-      <created>1711758793515</created>
+      <created>1711834405816</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1711758793515</updated>
+      <updated>1711834405816</updated>
     </task>
-    <task id="LOCAL-00007" summary="fixed commit.">
-      <option name="closed" value="true" />
-      <created>1711759837959</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1711759837959</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fixed commit.">
-      <option name="closed" value="true" />
-      <created>1711761230404</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1711761230404</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,8 +214,9 @@
     <MESSAGE value="setup basic stuff for react with the dependencies and folders, etc." />
     <MESSAGE value="updated connection" />
     <MESSAGE value="execute error function" />
-    <MESSAGE value="attempting to update SQL Database" />
-    <MESSAGE value="fixed commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed commit." />
+    <MESSAGE value="connected front end to back end" />
+    <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
+    <MESSAGE value="deleted some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

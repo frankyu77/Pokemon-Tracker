@@ -11,6 +11,7 @@ class dbConnection {
     }
 
     async connect() {
+         console.log("connection");
         try {
                 this.connection = await this.oracledb.getConnection({
                 user: "ora_kyu16",
@@ -19,7 +20,7 @@ class dbConnection {
                     autoCommit: true
 
             });
-                console.log("Connected to database");
+            console.log("Connected to database");
             return this.connection;
         } catch (error) {
             console.error("Error connecting to Oracle DB:", error);
@@ -37,7 +38,7 @@ class dbConnection {
             return result;
 
         } catch (err) {
-            //console.error('Error executing query:', err);
+            console.error('Error executing query:', err);
             throw err;
         }
     }
