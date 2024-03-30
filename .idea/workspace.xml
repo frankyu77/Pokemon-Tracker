@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="added files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -178,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711835749641</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="asdf">
+      <option name="closed" value="true" />
+      <created>1711836884822</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711836884822</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added files">
+      <option name="closed" value="true" />
+      <created>1711836989526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711836989526</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +229,8 @@
     <MESSAGE value="connected front end to back end" />
     <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
     <MESSAGE value="deleted some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="asdf" />
+    <MESSAGE value="added files" />
+    <option name="LAST_COMMIT_MESSAGE" value="added files" />
   </component>
 </project>
