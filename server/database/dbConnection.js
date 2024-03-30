@@ -17,6 +17,7 @@ class dbConnection {
                 password: "a70917505",
                 connectString: "dbhost.students.cs.ubc.ca:1522/stu",
                     autoCommit: true
+
             });
                 console.log("Connected to database");
             return this.connection;
@@ -31,7 +32,10 @@ class dbConnection {
             throw new Error('Database connection has not set');
         }
         try {
-            return await this.connection.execute(sql, bindings);
+            const result = await this.connection.execute(sql, bindings);
+            await this.connection.commit();
+            return result;
+
         } catch (err) {
             //console.error('Error executing query:', err);
             throw err;
