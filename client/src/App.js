@@ -30,6 +30,8 @@ import React, { useEffect, useState } from 'react';
 
 function App() {
   const [insertResultMsg, setInsertResultMsg] = useState("");
+  const [isError, setIsError] = useState(false);
+
   async function insertPokemonTable(event) {
     event.preventDefault();
     console.log("Form submitted!");
@@ -80,12 +82,15 @@ function App() {
         // fetchTableData();
       } else {
         messageElement.textContent = "Error inserting data!";
+        setIsError(true); // Set isError to true if there's an error
         setInsertResultMsg("Error inserting data!");
 
       }
     } catch (err) {
       console.log("ERRORRRRRRRR");
       console.log(err);
+      setIsError(true);
+      setInsertResultMsg("Error inserting data!");
     }
   }
 
@@ -110,9 +115,11 @@ function App() {
           Caught_Since: <input type="date" id="insertPokemonCaughtDate" placeholder="DD/MM/YYYY"/>
           PID: <input type="number" id="insertPokemonID" placeholder="Enter Pokemon ID"/>
 
-          <button type="submit"> Enter </button>
+          <button type="submit"> Enter</button>
         </form>
-        <div id="insertResultPokemonMsg" color={"red"}>{insertResultMsg}</div>
+        {/*<div id="insertResultPokemonMsg">{insertResultMsg}</div>*/}
+        <div id="insertResultPokemonMsg" className={isError ? "error" : "noError"}>{insertResultMsg}</div>
+
       </div>
   );
 }
