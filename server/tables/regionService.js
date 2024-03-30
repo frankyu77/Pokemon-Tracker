@@ -25,7 +25,7 @@ class regionService {
         }
     }
 
-    async updateRegionGYM(regionName){
+    async updateRegionGYM(regionName, gameID, gymNum){
         const sql = 'UPDATE FROM REGION_APARTOF WHERE REGIONNAME = :1';
         const bindings = [regionName];
         try {
