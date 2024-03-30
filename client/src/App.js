@@ -72,7 +72,10 @@ function App() {
       const messageElement = document.getElementById("insertResultPokemonMsg");
       if (responseData.success) {
         messageElement.textContent = "Data inserted successfully!";
-        setInsertResultMsg("Data inserted successfully!");
+        setInsertResultMsg("SUCCESS \n You Entered: " + pokemonName + ", " +
+            pokemonType1 + ", " + pokemonType2 + ", " + pokemonSpecialAttack + ", " +
+            pokemonCaughtDate.toLocaleDateString('en-GB') + ", " + pokemonID);
+        //setInsertResultMsg("Data inserted successfully!");
 
         // fetchTableData();
       } else {
@@ -109,7 +112,7 @@ function App() {
 
           <button type="submit"> Enter </button>
         </form>
-        <div id="insertResultPokemonMsg">{insertResultMsg}</div>
+        <div id="insertResultPokemonMsg" color={"red"}>{insertResultMsg}</div>
       </div>
   );
 }
