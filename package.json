@@ -1,0 +1,15 @@
+{
+  "name": "pokemon",
+  "version": "1.0.0",
+  "description": "pokemon project",
+  "main": "client/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.students.cs.ubc.ca/CPSC304-2023W-T2/project_d3o3o_q2l0q_y7b5p.git"
+  },
+  "author": "frank, philip, ethan",
+  "license": "ISC"
+}
