@@ -15,7 +15,7 @@ class regionService {
     }
 
     async removeRegion(regionName) {
-        const sql = 'DELETE FROM REGION_APARTOF WHERE TYPE = :1';
+        const sql = 'DELETE FROM REGION_APARTOF WHERE REGIONNAME = :1';
         const bindings = [regionName];
         try {
             await this.db.executeQuery(sql, bindings);
@@ -24,6 +24,18 @@ class regionService {
             console.error('Error removing:', err);
         }
     }
+
+    async updateRegionGYM(regionName){
+        const sql = 'UPDATE FROM REGION_APARTOF WHERE REGIONNAME = :1';
+        const bindings = [regionName];
+        try {
+            await this.db.executeQuery(sql, bindings);
+            console.log(`"${regionName}" updated successfully.`)
+        } catch (err){
+            console.error('Error updating:', err);
+        }
+    }
+
 }
 
 module.exports = regionService;

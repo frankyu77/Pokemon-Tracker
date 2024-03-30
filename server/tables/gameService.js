@@ -6,7 +6,7 @@ class gameService {
 
     async insertGame(gameID, difficulty, generation) {
         const sql = 'INSERT INTO GAME VALUES(:1, :2, :3)';
-        const sql1 = 'SELECT * FROM GAME'
+        // const sql1 = 'SELECT * FROM GAME'
         const bindings = [gameID, difficulty, generation];
         try {
             await this.db.executeQuery(sql, bindings);

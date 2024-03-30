@@ -17,9 +17,9 @@ async function test() {
     const dbManager = await new dbConnection();
     await dbManager.connect();
     //testing game
-    // const appServiceGame = new gameService(dbManager);
-    //await appServiceGame.insertGame(9, "Hard", "Ruby"); //works
-    // await appServiceGame.removeGame(9); // works
+    const appServiceGame = new gameService(dbManager);
+    await appServiceGame.insertGame(9, "Hard", "Ruby"); //works
+    await appServiceGame.removeGame(9); // works
 
     // testing pokemonInsert
     //const appService = new pokemonService(dbManager);
