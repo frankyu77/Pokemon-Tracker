@@ -61,6 +61,7 @@ async function test() {
 
 }
 async function main() {
+    console.log("main reached");
     await test();
 }
 

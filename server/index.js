@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 5001; // Set the port to either the environment variable PORT or 5000
+const PORT = process.env.PORT || 3001;
 
 // Define your routes or middleware here
 app.get('/', (req, res) => {
