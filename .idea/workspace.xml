@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="data added is actually added to the databse, also added sql file for all the scripts">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="deleted some files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +118,7 @@
       <workItem from="1711144899318" duration="2715000" />
       <workItem from="1711486209529" duration="720000" />
       <workItem from="1711663788399" duration="4976000" />
-      <workItem from="1711833756098" duration="324000" />
+      <workItem from="1711833756098" duration="658000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -162,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711773737750</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deleted some files">
+      <option name="closed" value="true" />
+      <created>1711834405816</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711834405816</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +204,7 @@
     <MESSAGE value="execute error function" />
     <MESSAGE value="connected front end to back end" />
     <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="data added is actually added to the databse, also added sql file for all the scripts" />
+    <MESSAGE value="deleted some files" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted some files" />
   </component>
 </project>
