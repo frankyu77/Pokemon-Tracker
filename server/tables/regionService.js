@@ -1,3 +1,4 @@
+const dbConnection = require('../database/dbConnection');
 class regionService {
     constructor(dbConnection) {
         this.db = dbConnection;
@@ -26,8 +27,8 @@ class regionService {
     }
 
     async updateRegionGYM(regionName, gameID, gymNum){
-        const sql = 'UPDATE FROM REGION_APARTOF WHERE REGIONNAME = :1';
-        const bindings = [regionName];
+        const sql = 'UPDATE REGION_APARTOF SET GAMEID = :1, GYM# = :2 WHERE REGIONNAME = :3';
+        const bindings = [gameID, gymNum, regionName];
         try {
             await this.db.executeQuery(sql, bindings);
             console.log(`"${regionName}" updated successfully.`)

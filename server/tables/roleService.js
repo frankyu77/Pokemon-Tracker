@@ -14,12 +14,12 @@ class roleService {
         }
     }
 
-    async removeRole(pid) {
+    async removeRole(role) {
         const sql = 'DELETE FROM ROLE_CATCHPHRASE WHERE ROLE = :1';
-        const bindings = [pid];
+        const bindings = [role];
         try {
             await this.db.executeQuery(sql, bindings);
-            console.log(`"${pid}" removed successfully.`);
+            console.log(`"${role}" removed successfully.`);
         } catch (err) {
             console.error('Error removing type:', err);
         }

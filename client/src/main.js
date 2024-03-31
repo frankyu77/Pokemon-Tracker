@@ -17,9 +17,9 @@ async function test() {
     const dbManager = await new dbConnection();
     await dbManager.connect();
     //testing game
-    const appServiceGame = new gameService(dbManager);
-    await appServiceGame.insertGame(9, "Hard", "Ruby"); //works
-    await appServiceGame.removeGame(9); // works
+    //const appServiceGame = new gameService(dbManager);
+    // await appServiceGame.insertGame(9, "Hard", "Ruby"); //works
+    // await appServiceGame.removeGame(9); // works
 
     // testing pokemonInsert
     //const appService = new pokemonService(dbManager);
@@ -32,29 +32,58 @@ async function test() {
     // await appServicePeople.removePeople(27); // works
 
     // testing typeService
-
-
+    const appTypeService = new typeService(dbManager);
+    await appTypeService.insertType("FireTest", "Test");
+    //await appTypeService.removeType("FireTest");
 
     //testing trainerService
+    const appTrainerService = new trainerService(dbManager);
+    await appTrainerService.insertTrainer(25, "Test","Pikachu");
+    //await appTrainerService.removeTrainer(25);
 
     //testing role_catch
-
-    //testing region_apartOF
-
-    //testing quest_Assigned
+    const appRoleService = new roleService(dbManager);
+    await appRoleService.insertRole("Test", "WOOO");
+    //await appRoleService.removeRole("Test");
 
     //testing gym_includes
+    const appGymService = new gymService(dbManager);
+    await appGymService.insertGymService(99, "Hard", "test", 8);
+    //await appGymService.removeGymService(99);
+
+    //testing region_apartOF
+    const appRegionService = new regionService(dbManager);
+    await appRegionService.insertRegion("testing", "test", 99, 8);
+    //await appRegionService.removeRegion("testing");
+
+    //testing quest_Assigned
+    const appQuestService = new questService(dbManager);
+    await appQuestService.insertQuest(29, "Hard", 25,2008-11-11 );
+    //await appQuestService.removeQuest(29);
 
 
     //testing gymMaster_owns
+    const appGymMasterService = new gymMasterService(dbManager);
+    await appGymMasterService.insertGymMasterService(25, "Test", "Marsh Badge");
+    //await appGymMasterService.removeGymMasterService(25);
 
     //testing items_has
+    const appItemHas = new itemHasService(dbManager);
+    await appItemHas.insertItemHas(20, "test", 8, "test");
+    //await appItemHas.removeItemHas(20);
 
     //testing leadsTo
+    const appLeadsTo = new leadsToService(dbManager);
+    await appLeadsTo.insertLeadsTo("testing", 0);
+    //await appLeadsTo.removeLeadsTo("testing", 0);
 
     //testing NPC_livesIn
-
-
+    const appNPCLives = new NPC_livesInService(dbManager);
+    await appNPCLives.insertNPC(25, "TEST", "Test", "testing");
+    await appNPCLives.removeNPC(25);
+    //testing updateRegion
+    //const appServiceRegion = new regionService(dbManager); // works
+    //await appServiceRegion.updateRegionGYM('city', 8, 100); //works
 
 
 
