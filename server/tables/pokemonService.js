@@ -33,7 +33,7 @@ class pokemonService {
         const sql = 'SELECT COUNT * FROM POKEMON_CAUGHT'
 
         try {
-            const result = await this.db.executeQuery(sql, bindings); 
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`Pokemon count worked`);
             return result;
         } catch (err) {

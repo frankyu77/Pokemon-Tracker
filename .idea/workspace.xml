@@ -7,6 +7,11 @@
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/pokemonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/pokemonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/questService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/questService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/regionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/trainerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/trainerService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +138,8 @@
       <workItem from="1711663788399" duration="4976000" />
       <workItem from="1711833756098" duration="658000" />
       <workItem from="1711840355513" duration="2521000" />
-      <workItem from="1711854288760" duration="5933000" />
+      <workItem from="1711854288760" duration="6605000" />
+      <workItem from="1711919868138" duration="2311000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -207,7 +213,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711858990153</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added all tests now">
+      <option name="closed" value="true" />
+      <created>1711860276568</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711860276568</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added all tests now">
+      <option name="closed" value="true" />
+      <created>1711860920878</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711860920878</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +268,7 @@
     <MESSAGE value="deleted some files" />
     <MESSAGE value="added blind tests" />
     <MESSAGE value="added blind tests for all tables in main." />
-    <option name="LAST_COMMIT_MESSAGE" value="added blind tests for all tables in main." />
+    <MESSAGE value="added all tests now" />
+    <option name="LAST_COMMIT_MESSAGE" value="added all tests now" />
   </component>
 </project>

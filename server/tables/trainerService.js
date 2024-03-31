@@ -4,7 +4,7 @@ class trainerService {
     }
 
     async insertTrainer(pid, name, favourite) {
-        const sql = 'INSERT INTO TYPE_WEAKNESS VALUES(:1, :2, :3)';
+        const sql = 'INSERT INTO TRAINER VALUES(:1, :2, :3)';
         const bindings = [pid, name, favourite];
         try {
             await this.db.executeQuery(sql, bindings);

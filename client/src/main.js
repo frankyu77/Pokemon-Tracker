@@ -38,72 +38,80 @@ async function test() {
 
     // testing typeService
     const appTypeService = new typeService(dbManager);
-    await appTypeService.insertType("FireTest", "Test");
+    //await appTypeService.insertType("FireTest", "Test");
     //await appTypeService.removeType("FireTest");
 
     //testing trainerService
     const appTrainerService = new trainerService(dbManager);
-    await appTrainerService.insertTrainer(25, "Test","Pikachu");
+    //await appTrainerService.insertTrainer(25, "Test","Pikachu");
     //await appTrainerService.removeTrainer(25);
 
     //testing role_catch
     const appRoleService = new roleService(dbManager);
-    await appRoleService.insertRole("Test", "WOOO");
+    //await appRoleService.insertRole("Test", "WOOO");
     //await appRoleService.removeRole("Test");
 
     //testing gym_includes
     const appGymService = new gymService(dbManager);
-    await appGymService.insertGymService(99, "Hard", "test", 8);
+    //await appGymService.insertGymService(99, "Hard", "test", 8);
     //await appGymService.removeGymService(99);
 
     //testing region_apartOF
     const appRegionService = new regionService(dbManager);
-    await appRegionService.insertRegion("testing", "test", 99, 8);
+    //await appRegionService.insertRegion("testing", "test", 99, 8);
     //await appRegionService.removeRegion("testing");
 
     //testing quest_Assigned
     const appQuestService = new questService(dbManager);
-    await appQuestService.insertQuest(29, "Hard", 25,2008-11-11 );
+    //await appQuestService.insertQuest(29, "Hard", 25,"2008-11-11");
     //await appQuestService.removeQuest(29);
 
 
     //testing gymMaster_owns
     const appGymMasterService = new gymMasterService(dbManager);
-    await appGymMasterService.insertGymMasterService(25, "Test", "Marsh Badge");
+    //await appGymMasterService.insertGymMasterService(25, "Test", "Marsh Badge");
     //await appGymMasterService.removeGymMasterService(25);
 
     //testing items_has
     const appItemHas = new itemHasService(dbManager);
-    await appItemHas.insertItemHas(20, "test", 8, "test");
+    //await appItemHas.insertItemHas(20, "test", 8, "test");
     //await appItemHas.removeItemHas(20);
 
     //testing leadsTo
     const appLeadsTo = new leadsToService(dbManager);
-    await appLeadsTo.insertLeadsTo("testing", 0);
+    //await appLeadsTo.insertLeadsTo("testing", 0);
     //await appLeadsTo.removeLeadsTo("testing", 0);
 
     //testing NPC_livesIn
     const appNPCLives = new NPC_livesInService(dbManager);
-    await appNPCLives.insertNPC(25, "TEST", "Test", "testing");
+    //await appNPCLives.insertNPC(25, "TEST", "Test", "testing");
     //await appNPCLives.removeNPC(25);
 
     //testing badgeService
     const appBadge = new badgeService(dbManager);
-    await appBadge.insertBadge("TESTING", 0, 0);
+    //await appBadge.insertBadge("TESTING", 0, 0);
     //await appBadge.removeBadge("TESTING");
 
     //testing difficultyService
     const appDifficultyService = new difficultyService(dbManager);
-    await appDifficultyService.insertDifficulty("TEST", "TEST");
+    //await appDifficultyService.insertDifficulty("TEST", "TEST");
     //await appDifficultyService.removeDifficulty("TEST");
 
     //testing enterableAreasService
     const appEnterableAreas = new enterableAreasService(dbManager);
-    await appEnterableAreas.insertEnterableArea(50, "idk");
+    //await appEnterableAreas.insertEnterableArea(50, "idk");
     //await appEnterableAreas.removeEnterableArea(50);
 
+    //testing Division
 
-    //testing SUM
+
+
+    //Group By all one
+
+    //Having
+
+    //Nested group by
+
 
 
 

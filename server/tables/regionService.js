@@ -37,6 +37,31 @@ class regionService {
         }
     }
 
+    async gameWithLeastRegions(){
+        // group By, having, Nested aggregation with Group by
+        const sql = 'SELECT GAMEID FROM REGION_APARTOF GROUP BY GAMEID HAVING COUNT(*) = (SELECT MIN(COUNT(*)) FROM REGION_APARTOF a GROUP BY GAMEID)';
+        const bindings = [];
+        try {
+            await this.db.executeQuery(sql, bindings);
+            console.log(`Game with least number of regions}`);
+        } catch (err){
+            console.error('Error getting game with least # of regions', err);
+        }
+    }
+
+    // groupBy
+    async LeastNumberOfRegionsInAGame(){
+        const sql = 'SELECT MIN(COUNT(*)) FROM REGION_APARTOF a GROUP BY GAMEID';
+        const bindings = [];
+        try {
+            await this.db.executeQuery(sql, bindings);
+            console.log(`Game with least number of regions}`);
+        } catch (err){
+            console.error('Error getting game with least # of regions', err);
+        }
+    }
+
+
 }
 
 module.exports = regionService;
