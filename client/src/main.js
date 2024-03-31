@@ -80,7 +80,7 @@ async function test() {
     //testing NPC_livesIn
     const appNPCLives = new NPC_livesInService(dbManager);
     await appNPCLives.insertNPC(25, "TEST", "Test", "testing");
-    await appNPCLives.removeNPC(25);
+    //await appNPCLives.removeNPC(25);
     //testing updateRegion
     //const appServiceRegion = new regionService(dbManager); // works
     //await appServiceRegion.updateRegionGYM('city', 8, 100); //works

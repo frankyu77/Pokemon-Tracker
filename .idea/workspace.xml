@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/tables/badgeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/tables/diificultyService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/tables/enterableAreasService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/regionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/roleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/roleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <workItem from="1711663788399" duration="4976000" />
       <workItem from="1711833756098" duration="658000" />
       <workItem from="1711840355513" duration="2521000" />
-      <workItem from="1711854288760" duration="3055000" />
+      <workItem from="1711854288760" duration="4436000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -193,7 +194,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711835749641</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added blind tests for all tables in main.">
+      <option name="closed" value="true" />
+      <created>1711857438739</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711857438739</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +239,8 @@
     <MESSAGE value="connected front end to back end" />
     <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
     <MESSAGE value="deleted some files" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="added blind tests" />
+    <MESSAGE value="added blind tests for all tables in main." />
+    <option name="LAST_COMMIT_MESSAGE" value="added blind tests for all tables in main." />
   </component>
 </project>
