@@ -5,9 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/tables/badgeService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/diificultyService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/tables/enterableAreasService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
     </list>
@@ -136,7 +133,7 @@
       <workItem from="1711663788399" duration="4976000" />
       <workItem from="1711833756098" duration="658000" />
       <workItem from="1711840355513" duration="2521000" />
-      <workItem from="1711854288760" duration="4436000" />
+      <workItem from="1711854288760" duration="5933000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -202,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711857438739</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="added blind tests for all tables in main.">
+      <option name="closed" value="true" />
+      <created>1711858990153</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711858990153</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

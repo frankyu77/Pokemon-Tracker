@@ -11,7 +11,12 @@ const gymMasterService = require('../../server/tables/gymMasterService');
 const itemHasService = require('../../server/tables/itemHasService');
 const leadsToService = require('../../server/tables/leadsToService');
 const NPC_livesInService = require('../../server/tables/NPC_livesInService');
+const badgeService = require('../../server/tables/badgeService');
+const difficultyService = require('../../server/tables/diificultyService');
+const enterableAreasService = require('../../server/tables/enterableAreasService');
+
 const dbConnection = require('../../server/database/dbConnection');
+
 
 async function test() {
     const dbManager = await new dbConnection();
@@ -81,6 +86,27 @@ async function test() {
     const appNPCLives = new NPC_livesInService(dbManager);
     await appNPCLives.insertNPC(25, "TEST", "Test", "testing");
     //await appNPCLives.removeNPC(25);
+
+    //testing badgeService
+    const appBadge = new badgeService(dbManager);
+    await appBadge.insertBadge("TESTING", 0, 0);
+    //await appBadge.removeBadge("TESTING");
+
+    //testing difficultyService
+    const appDifficultyService = new difficultyService(dbManager);
+    await appDifficultyService.insertDifficulty("TEST", "TEST");
+    //await appDifficultyService.removeDifficulty("TEST");
+
+    //testing enterableAreasService
+    const appEnterableAreas = new enterableAreasService(dbManager);
+    await appEnterableAreas.insertEnterableArea(50, "idk");
+    //await appEnterableAreas.removeEnterableArea(50);
+
+
+    //testing SUM
+
+
+
     //testing updateRegion
     //const appServiceRegion = new regionService(dbManager); // works
     //await appServiceRegion.updateRegionGYM('city', 8, 100); //works
