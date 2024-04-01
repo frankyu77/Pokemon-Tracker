@@ -4,11 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="implemented the backend connections, but still need to test if it works or not">
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="able to list all the data and paste on the client">
+      <change afterPath="$PROJECT_DIR$/client/src/app/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/TESTING.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/TESTING.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/appController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/appController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbConnection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,37 +69,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.appController.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.dbConnection.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.game.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.gameClass.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.main.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.pokemonService.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;frank-testing3&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.appController.js.executor": "Run",
+    "Node.js.dbConnection.js.executor": "Run",
+    "Node.js.game.js.executor": "Run",
+    "Node.js.gameClass.js.executor": "Run",
+    "Node.js.main.js.executor": "Run",
+    "Node.js.pokemonService.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Merging frank-testing3",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
-    ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;OracleSqlPlus&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/public" />
@@ -228,7 +237,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="frank_testing2" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -251,6 +260,7 @@
     <MESSAGE value="asdf" />
     <MESSAGE value="added files" />
     <MESSAGE value="implemented the backend connections, but still need to test if it works or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the backend connections, but still need to test if it works or not" />
+    <MESSAGE value="able to list all the data and paste on the client" />
+    <option name="LAST_COMMIT_MESSAGE" value="able to list all the data and paste on the client" />
   </component>
 </project>
