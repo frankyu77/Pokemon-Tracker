@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import TESTINGAPP from './App';
 import REMOVE from './REMOVE';
-import TESTING from './TESTING';
 import TESTING2 from './TESTING2'
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
@@ -13,7 +12,6 @@ root.render(
   <React.StrictMode>
       <TESTINGAPP />
       <REMOVE />
-      <TESTING />
       <TESTING2 />
       <App />
   </React.StrictMode>

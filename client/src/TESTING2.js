@@ -53,7 +53,6 @@ function TESTING2() {
             <button id="fetchPokemonDataButton2"> Projection Pokemon </button>
             <button onClick={clearPokemonList}> Clear Pokémon List </button>
             <div>
-                <h3>Toggle Fields:</h3>
                 {['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID'].map(fieldName => (
                     <button
                         key={fieldName}
