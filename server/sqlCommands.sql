@@ -1,0 +1,2 @@
+-- this is where the scripts for creating all the tables and populating the tables should be
+-- should also have the script for dropping all the tables

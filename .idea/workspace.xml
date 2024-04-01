@@ -4,7 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="setup basic stuff for react with the dependencies and folders, etc." />
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="able to list all the data and paste on the client">
+      <change afterPath="$PROJECT_DIR$/client/src/app/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,8 +35,27 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;pmacau&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="283fca02-6eb7-4b1c-8631-b4865c1cdba7" />
+        <option name="url" value="https://github.students.cs.ubc.ca/CPSC304-2023W-T2/project_d3o3o_q2l0q_y7b5p.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,11 +71,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.appController.js.executor": "Run",
+    "Node.js.dbConnection.js.executor": "Run",
     "Node.js.game.js.executor": "Run",
     "Node.js.gameClass.js.executor": "Run",
+    "Node.js.main.js.executor": "Run",
+    "Node.js.pokemonService.js.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "frank__testing2",
+    "git-widget-placeholder": "Merging frank-testing3",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -59,6 +99,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/server/tables" />
       <recent name="$PROJECT_DIR$/server/database" />
     </key>
@@ -72,13 +113,6 @@
         <item itemvalue="Node.js.gameClass.js" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-20.0.2-corretto-20.0.2.1-f644763e9732-447c96ba" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -94,6 +128,17 @@
       <workItem from="1710544747956" duration="375000" />
       <workItem from="1710723736818" duration="2191000" />
       <workItem from="1710737840891" duration="2683000" />
+      <workItem from="1711055320956" duration="3769000" />
+      <workItem from="1711089708692" duration="4762000" />
+      <workItem from="1711144899318" duration="2715000" />
+      <workItem from="1711486209529" duration="720000" />
+      <workItem from="1711663788399" duration="4976000" />
+      <workItem from="1711833756098" duration="658000" />
+      <workItem from="1711845265927" duration="1604000" />
+      <workItem from="1711848549051" duration="4291000" />
+      <workItem from="1711987709316" duration="2993000" />
+      <workItem from="1711990811069" duration="649000" />
+      <workItem from="1711994068505" duration="1758000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -111,7 +156,71 @@
       <option name="project" value="LOCAL" />
       <updated>1710740203256</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="execute error function">
+      <option name="closed" value="true" />
+      <created>1711069418233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1711069418233</updated>
+    </task>
+    <task id="LOCAL-00004" summary="connected front end to back end">
+      <option name="closed" value="true" />
+      <created>1711671909671</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1711671909671</updated>
+    </task>
+    <task id="LOCAL-00005" summary="data added is actually added to the databse, also added sql file for all the scripts">
+      <option name="closed" value="true" />
+      <created>1711773737750</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1711773737750</updated>
+    </task>
+    <task id="LOCAL-00006" summary="deleted some files">
+      <option name="closed" value="true" />
+      <created>1711834405816</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1711834405816</updated>
+    </task>
+    <task id="LOCAL-00007" summary="merged philip-testing and frank-testing3">
+      <option name="closed" value="true" />
+      <created>1711835749641</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1711835749641</updated>
+    </task>
+    <task id="LOCAL-00008" summary="asdf">
+      <option name="closed" value="true" />
+      <created>1711836884822</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1711836884822</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added files">
+      <option name="closed" value="true" />
+      <created>1711836989526</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711836989526</updated>
+    </task>
+    <task id="LOCAL-00010" summary="implemented the backend connections, but still need to test if it works or not">
+      <option name="closed" value="true" />
+      <created>1711990764544</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1711990764544</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +237,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="frank_testing2" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -143,6 +252,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value=";oilj" />
     <MESSAGE value="setup basic stuff for react with the dependencies and folders, etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="setup basic stuff for react with the dependencies and folders, etc." />
+    <MESSAGE value="updated connection" />
+    <MESSAGE value="execute error function" />
+    <MESSAGE value="connected front end to back end" />
+    <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
+    <MESSAGE value="deleted some files" />
+    <MESSAGE value="asdf" />
+    <MESSAGE value="added files" />
+    <MESSAGE value="implemented the backend connections, but still need to test if it works or not" />
+    <MESSAGE value="able to list all the data and paste on the client" />
+    <option name="LAST_COMMIT_MESSAGE" value="able to list all the data and paste on the client" />
   </component>
 </project>
