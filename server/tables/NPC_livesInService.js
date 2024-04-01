@@ -7,10 +7,12 @@ class NPC_livesInService {
         const sql = 'INSERT INTO NPC_LIVESIN VALUES(:1, :2, :3, :4)';
         const bindings = [pid, name, role, region];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`NPC "${bindings}" inserted`);
+            return result;
         } catch (err) {
             console.error('Error inserting NPC:', err);
+            return false;
         }
     }
 
@@ -18,10 +20,12 @@ class NPC_livesInService {
         const sql = 'DELETE FROM NPC_LIVESIN WHERE PID = :1';
         const bindings = [pID];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result =  await this.db.executeQuery(sql, bindings);
             console.log(`"${pID}" removed successfully.`);
+            return result;
         } catch (err) {
             console.error('NPC removing:', err);
+            return false;
         }
     }
 }

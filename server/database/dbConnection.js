@@ -28,20 +28,38 @@ class dbConnection {
         }
     }
 
-    async executeQuery(sql, bindings) {
+    async executeQuery(sql, bindings = []) {
         if (!this.connection) {
             throw new Error('Database connection has not set');
         }
         try {
-            const result = await this.connection.execute(sql, bindings);
-            await this.connection.commit();
-            return result;
+            // const result = await this.connection.execute(sql, bindings);
+            // await this.connection.commit();
+            // return result;
+            return await this.connection.execute(sql, bindings, { autoCommit: true });
+
 
         } catch (err) {
             console.error('Error executing query:', err);
             throw err;
         }
     }
+
+    async executeQueryResult(sql, bindings = []) {
+        if (!this.connection) {
+            throw new Error('Database connection has not been established');
+        }
+        try {
+            const result = await this.connection.execute(sql, bindings);
+            // Assuming result.rows contains the fetched data
+            console.log("successful");
+            return result.rows;
+        } catch (err) {
+            console.error('Error executing query:', err);
+            throw err;
+        }
+    }
+
 
 }
 module.exports = dbConnection;

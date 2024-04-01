@@ -9,10 +9,12 @@ class gameService {
         // const sql1 = 'SELECT * FROM GAME'
         const bindings = [gameID, difficulty, generation];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`Game of "${bindings}" inserted`);
+            return result;
         } catch (err) {
             console.error('Error inserting game:', err);
+            return false;
         }
     }
 
@@ -20,10 +22,12 @@ class gameService {
         const sql = 'DELETE FROM game WHERE gameID = :1';
         const bindings = [gID];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`Game with ID "${gID}" removed successfully.`);
+            return result;
         } catch (err) {
             console.error('Error removing game:', err);
+            return false;
         }
     }
 

@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="">
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="added projection on the pokemon caught">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/tables/gameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/TESTING.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/TESTING2.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/TESTING2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,41 +58,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.dbConnection.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.game.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.gameClass.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.main.js.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.pokemonService.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;philip-testing2&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.appController.js.executor": "Run",
+    "Node.js.dbConnection.js.executor": "Run",
+    "Node.js.game.js.executor": "Run",
+    "Node.js.gameClass.js.executor": "Run",
+    "Node.js.main.js.executor": "Run",
+    "Node.js.pokemonService.js.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "frank-testing3",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
-    ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/&quot;: [
-      &quot;OracleSqlPlus&quot;
-    ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;OracleSqlPlus&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src" />
+      <recent name="$PROJECT_DIR$/client/src/app" />
       <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/server/tables" />
       <recent name="$PROJECT_DIR$/server/database" />
@@ -133,12 +132,11 @@
       <workItem from="1711486209529" duration="720000" />
       <workItem from="1711663788399" duration="4976000" />
       <workItem from="1711833756098" duration="658000" />
-      <workItem from="1711840355513" duration="2521000" />
-      <workItem from="1711854288760" duration="6605000" />
-      <workItem from="1711919868138" duration="3051000" />
-      <workItem from="1711922944672" duration="154000" />
-      <workItem from="1711923112003" duration="732000" />
-      <workItem from="1711923862897" duration="2283000" />
+      <workItem from="1711845265927" duration="1604000" />
+      <workItem from="1711848549051" duration="4291000" />
+      <workItem from="1711987709316" duration="2993000" />
+      <workItem from="1711990811069" duration="649000" />
+      <workItem from="1711994068505" duration="1758000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />
@@ -196,45 +194,45 @@
       <option name="project" value="LOCAL" />
       <updated>1711835749641</updated>
     </task>
-    <task id="LOCAL-00008" summary="added blind tests for all tables in main.">
+    <task id="LOCAL-00008" summary="asdf">
       <option name="closed" value="true" />
-      <created>1711857438739</created>
+      <created>1711836884822</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1711857438739</updated>
+      <updated>1711836884822</updated>
     </task>
-    <task id="LOCAL-00009" summary="added blind tests for all tables in main.">
+    <task id="LOCAL-00009" summary="added files">
       <option name="closed" value="true" />
-      <created>1711858990153</created>
+      <created>1711836989526</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1711858990153</updated>
+      <updated>1711836989526</updated>
     </task>
-    <task id="LOCAL-00010" summary="added all tests now">
+    <task id="LOCAL-00010" summary="implemented the backend connections, but still need to test if it works or not">
       <option name="closed" value="true" />
-      <created>1711860276568</created>
+      <created>1711990764544</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1711860276568</updated>
+      <updated>1711990764544</updated>
     </task>
-    <task id="LOCAL-00011" summary="added all tests now">
+    <task id="LOCAL-00011" summary="merged with main">
       <option name="closed" value="true" />
-      <created>1711860920878</created>
+      <created>1711997140912</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1711860920878</updated>
+      <updated>1711997140912</updated>
     </task>
-    <task id="LOCAL-00012" summary="all inserts work as intended.">
+    <task id="LOCAL-00012" summary="added projection on the pokemon caught">
       <option name="closed" value="true" />
-      <created>1711922291299</created>
+      <created>1711999375233</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1711922291299</updated>
+      <updated>1711999375233</updated>
     </task>
     <option name="localTasksCounter" value="13" />
     <servers />
@@ -253,7 +251,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="frank_testing2" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -273,10 +271,12 @@
     <MESSAGE value="connected front end to back end" />
     <MESSAGE value="data added is actually added to the databse, also added sql file for all the scripts" />
     <MESSAGE value="deleted some files" />
-    <MESSAGE value="added blind tests" />
-    <MESSAGE value="added blind tests for all tables in main." />
-    <MESSAGE value="added all tests now" />
-    <MESSAGE value="all inserts work as intended." />
-    <option name="LAST_COMMIT_MESSAGE" value="all inserts work as intended." />
+    <MESSAGE value="asdf" />
+    <MESSAGE value="added files" />
+    <MESSAGE value="implemented the backend connections, but still need to test if it works or not" />
+    <MESSAGE value="able to list all the data and paste on the client" />
+    <MESSAGE value="merged with main" />
+    <MESSAGE value="added projection on the pokemon caught" />
+    <option name="LAST_COMMIT_MESSAGE" value="added projection on the pokemon caught" />
   </component>
 </project>
