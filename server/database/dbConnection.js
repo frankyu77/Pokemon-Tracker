@@ -28,14 +28,16 @@ class dbConnection {
         }
     }
 
-    async executeQuery(sql, bindings) {
+    async executeQuery(sql, bindings = []) {
         if (!this.connection) {
             throw new Error('Database connection has not set');
         }
         try {
-            const result = await this.connection.execute(sql, bindings);
-            await this.connection.commit();
-            return result;
+            // const result = await this.connection.execute(sql, bindings);
+            // await this.connection.commit();
+            // return result;
+            return await this.connection.execute(sql, bindings, { autoCommit: true });
+
 
         } catch (err) {
             console.error('Error executing query:', err);

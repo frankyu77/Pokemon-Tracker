@@ -7,10 +7,12 @@ class gymMasterService{
         const sql = 'INSERT INTO GYMMASTER_OWNS VALUES(:1, :2, :3, :4)';
         const bindings = [pid, name, badge, owns_since];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`GymMaster "${bindings}" inserted`);
+            return result;
         } catch (err) {
             console.error('Error inserting GymMaster:', err);
+            return false;
         }
     }
 
@@ -18,10 +20,12 @@ class gymMasterService{
         const sql = 'DELETE FROM GYMMASTER_OWNS WHERE PID = :1';
         const bindings = [pid];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`"${pid}" removed successfully.`);
+            return result;
         } catch (err) {
             console.error('GymMaster removing:', err);
+            return false;
         }
     }
 }

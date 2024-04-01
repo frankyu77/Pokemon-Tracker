@@ -4,7 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="added files" />
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="workspace">
+      <change afterPath="$PROJECT_DIR$/client/src/REMOVE.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/TESTING.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/appController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/appController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/appService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/appService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database/dbConnection.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/database/dbConnection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/NPC_livesInService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gameService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gameService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gymMasterService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymMasterService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/gymService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/gymService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/itemHasService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/itemHasService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/leadsToService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/leadsToService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/peopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/peopleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/pokemonService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/pokemonService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/questService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/questService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/regionService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/regionService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/roleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/roleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/trainerService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/trainerService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tables/typeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tables/typeService.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +77,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.appController.js.executor": "Run",
     "Node.js.dbConnection.js.executor": "Run",
     "Node.js.game.js.executor": "Run",
     "Node.js.gameClass.js.executor": "Run",
@@ -119,6 +143,9 @@
       <workItem from="1711486209529" duration="720000" />
       <workItem from="1711663788399" duration="4976000" />
       <workItem from="1711833756098" duration="658000" />
+      <workItem from="1711845265927" duration="1604000" />
+      <workItem from="1711848549051" duration="4291000" />
+      <workItem from="1711987709316" duration="2776000" />
     </task>
     <task id="LOCAL-00001" summary=";oilj">
       <option name="closed" value="true" />

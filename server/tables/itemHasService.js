@@ -7,10 +7,12 @@ class itemHasService{
         const sql = 'INSERT INTO ITEMS_HAS VALUES(:1, :2, :3, :4)';
         const bindings = [itemNum, rarity, gameID, itemName];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`ItemHas "${bindings}" inserted`);
+            return result;
         } catch (err) {
             console.error('Error inserting ItemHas:', err);
+            return false;
         }
     }
 
@@ -18,10 +20,12 @@ class itemHasService{
         const sql = 'DELETE FROM ITEMS_HAS WHERE ITEM# = :1';
         const bindings = [itemNum];
         try {
-            await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql, bindings);
             console.log(`"${itemNum}" removed successfully.`);
+            return result;
         } catch (err) {
             console.error('ItemNum removing:', err);
+            return false;
         }
     }
 }
