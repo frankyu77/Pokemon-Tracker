@@ -6,7 +6,7 @@ class gameService {
 
     async insertGame(gameID, difficulty, generation) {
         const sql = 'INSERT INTO GAME VALUES(:1, :2, :3)';
-        const sql1 = 'SELECT * FROM GAME'
+        // const sql1 = 'SELECT * FROM GAME'
         const bindings = [gameID, difficulty, generation];
         try {
             const result = await this.db.executeQuery(sql, bindings);
@@ -30,6 +30,20 @@ class gameService {
             return false;
         }
     }
+
+    async gameWithAllRoles(){
+        const sql = 'SELECT g1.GAMEID FROM GAME g1 WHERE NOT EXISTS (SELECT r.ROLE FROM ROLE_CATCHPHRASE r MINUS SELECT n1.ROLE FROM PEOPLE_HAS p1, NPC_LIVESIN n1 WHERE p1.GAMEID = g1.GAMEID AND n1.PID = p1.pid)';
+        const bindings = [];
+        try {
+            await this.db.executeQuery(sql, bindings);
+            console.log('Game with all roles successful');
+        } catch (err){
+            console.error('Error showing game will all roles', err);
+        }
+
+    }
+
+
 }
 
 module.exports = gameService;
