@@ -45,5 +45,21 @@ class dbConnection {
         }
     }
 
+    async executeQueryResult(sql, bindings = []) {
+        if (!this.connection) {
+            throw new Error('Database connection has not been established');
+        }
+        try {
+            const result = await this.connection.execute(sql, bindings);
+            // Assuming result.rows contains the fetched data
+            console.log("successful");
+            return result.rows;
+        } catch (err) {
+            console.error('Error executing query:', err);
+            throw err;
+        }
+    }
+
+
 }
 module.exports = dbConnection;

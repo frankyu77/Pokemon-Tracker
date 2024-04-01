@@ -87,21 +87,17 @@ app.post('/remove-pokemon-caught', async (req, res) => {
 });
 
 app.post('/list-pokemon-caught', async (req, res) => {
-    const {name} = req.body;
-
     try {
-        const insertResult = await db.executeQuery('select * from pokemon_caught');
+        // Fetch Pokémon caught data from the database
+        const pokemonCaughtData = await db.executeQueryResult('SELECT * FROM pokemon_caught');
+        console.log(pokemonCaughtData);
 
-        if (insertResult) {
-            const result = await db.executeQuery('commit');
-            console.log("committed: " + result);
-            res.json({success: true});
-        } else {
-            res.status(500).json({success: false});
-        }
-    } catch (err) {
-        console.error('Error removing Pokemon:', err);
-        res.status(500).json({ success: false });
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: pokemonCaughtData });
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 // -------------------------------------------------------------------------------------------------------PokemonService
