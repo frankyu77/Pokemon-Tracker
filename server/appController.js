@@ -100,6 +100,24 @@ app.post('/list-pokemon-caught', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+app.post('/projection-pokemon-caught', async (req, res) => {
+    try {
+        // Fetch Pokémon caught data from the database
+        const selectedFields = req.body.fields;
+        const sqlQuery = `SELECT ${selectedFields.join(', ')} FROM pokemon_caught`;
+
+        pokemonCaughtData = await db.executeQueryResult(sqlQuery);
+        console.log(pokemonCaughtData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: pokemonCaughtData });
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 // -------------------------------------------------------------------------------------------------------PokemonService
 
 // -------------------------------------------------------------------------------------------------------GameService

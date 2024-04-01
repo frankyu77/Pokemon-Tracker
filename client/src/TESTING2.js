@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
-function TESTING() {
+function TESTING2() {
     const [pokemonList, setPokemonList] = useState([]);
-    const [loading, setLoading] = useState(false);
     const [selectedFields, setSelectedFields] =
         useState(['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID']);
 
-    async function fetchPokemonData() {
-        setLoading(true);
+    const fetchPokemonData = useCallback(async () => {
         try {
-            const response = await fetch('http://localhost:3001/list-pokemon-caught', {
-                method: 'POST'
+            const response = await fetch('http://localhost:3001/projection-pokemon-caught', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ fields: selectedFields })
             });
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -23,17 +25,15 @@ function TESTING() {
             }
         } catch (error) {
             console.error('Error fetching Pokémon caught data:', error);
-        } finally {
-            setLoading(false);
         }
-    }
+    }, [selectedFields]);
 
     useEffect(() => {
-        document.getElementById("fetchPokemonDataButton").addEventListener("click", fetchPokemonData);
+        document.getElementById("fetchPokemonDataButton2").addEventListener("click", fetchPokemonData);
         return () => {
-            document.getElementById("fetchPokemonDataButton").removeEventListener("click", fetchPokemonData);
+            document.getElementById("fetchPokemonDataButton2").removeEventListener("click", fetchPokemonData);
         };
-    }, []);
+    }, [fetchPokemonData]);
 
     const clearPokemonList = () => {
         setPokemonList([]);
@@ -50,16 +50,14 @@ function TESTING() {
     return (
         <div>
             <h2>Pokémon Caught</h2>
-            <button id="fetchPokemonDataButton" disabled={loading}>
-                {loading ? 'Loading...' : 'Fetch Pokémon Data'}
-            </button>
-            <button onClick={clearPokemonList}>Clear Pokémon List</button>
+            <button id="fetchPokemonDataButton2"> Projection Pokemon </button>
+            <button onClick={clearPokemonList}> Clear Pokémon List </button>
             <div>
-                <h3>Choose which field you would like to view:</h3>
+                <h3>Toggle Fields:</h3>
                 {['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID'].map(fieldName => (
                     <button
                         key={fieldName}
-                        style={{background: selectedFields.includes(fieldName) ? 'green' : 'grey'}}
+                        style={{ background: selectedFields.includes(fieldName) ? 'green' : 'grey' }}
                         onClick={() => toggleFieldSelection(fieldName)}
                     >
                         {fieldName}
@@ -67,8 +65,8 @@ function TESTING() {
                 ))}
             </div>
             <ul>
-                {pokemonList.map(pokemon => (
-                    <li key={pokemon.NAME}>
+                {pokemonList.map((pokemon, index) => (
+                    <li key={index}>
                         {selectedFields.map(field => (
                             <div key={field}>
                                 {field}: {pokemon[field]}
@@ -82,4 +80,4 @@ function TESTING() {
     );
 }
 
-export default TESTING;
+export default TESTING2;
