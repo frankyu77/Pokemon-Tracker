@@ -47,6 +47,41 @@ const typeService = new TypeService(db);
     }
 })();
 
+
+app.post('/selection', async (req, res) => {
+    const {tableName, whereClause} = req.body;
+
+    try {
+        // Fetch Pokémon caught data from the database
+        const selectionResult = await db.executeQueryResult('SELECT * FROM ${tableName} WHERE ${whereClause}');
+        // console.log(pokemonCaughtData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: selectionResult });
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+
+});
+
+app.post ('/join-pokemon-people', async (req, res) => {
+    const {commonAttribute} = req.body;
+
+    try {
+        console.log("asdf");
+        const query = `SELECT * FROM pokemon_caught pc, people_has ph WHERE pc.${commonAttribute} = ph.${commonAttribute}`;
+        const joinResult = await db.executeQueryResult(query);
+        res.json({ success: true, data: joinResult });
+        console.log('after success');
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // -------------------------------------------------------------------------------------------------------PokemonService
 app.post('/insert-pokemon-caught', async (req, res) => {
     const {name, type1, type2, specialattack, caught_since, pid} = req.body;
@@ -118,6 +153,8 @@ app.post('/projection-pokemon-caught', async (req, res) => {
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+
 // -------------------------------------------------------------------------------------------------------PokemonService
 
 // -------------------------------------------------------------------------------------------------------GameService

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from 'react';
 
 function TESTING2() {
     const [pokemonList, setPokemonList] = useState([]);
+    const [isTableHeaderVisible, setIsTableHeaderVisible] = useState(false);
     const [selectedFields, setSelectedFields] =
         useState(['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID']);
 
@@ -14,12 +15,15 @@ function TESTING2() {
                 },
                 body: JSON.stringify({ fields: selectedFields })
             });
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+
             const data = await response.json();
             if (data.success) {
                 setPokemonList(data.data);
+                setIsTableHeaderVisible(true);
             } else {
                 console.error('Failed to fetch Pokémon caught data:', data.error);
             }
@@ -37,6 +41,7 @@ function TESTING2() {
 
     const clearPokemonList = () => {
         setPokemonList([]);
+        setIsTableHeaderVisible(false);
     };
 
     const toggleFieldSelection = (fieldName) => {
@@ -50,31 +55,39 @@ function TESTING2() {
     return (
         <div>
             <h2>Pokémon Caught</h2>
-            <button id="fetchPokemonDataButton2"> Projection Pokemon </button>
-            <button onClick={clearPokemonList}> Clear Pokémon List </button>
+            <button id="fetchPokemonDataButton2"> Projection Pokemon</button>
+            <button onClick={clearPokemonList}> Clear Pokémon List</button>
             <div>
                 {['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID'].map(fieldName => (
                     <button
                         key={fieldName}
-                        style={{ background: selectedFields.includes(fieldName) ? 'green' : 'grey' }}
+                        style={{background: selectedFields.includes(fieldName) ? 'green' : 'grey'}}
                         onClick={() => toggleFieldSelection(fieldName)}
                     >
                         {fieldName}
                     </button>
                 ))}
             </div>
-            <ul>
-                {pokemonList.map((pokemon, index) => (
-                    <li key={index}>
-                        {selectedFields.map(field => (
-                            <div key={field}>
-                                {field}: {pokemon[field]}
-                            </div>
+            {isTableHeaderVisible && ( // Conditionally render the table header
+                <table>
+                    <thead>
+                    <tr>
+                        {selectedFields.map(fieldName => (
+                            <th key={fieldName}>{fieldName}</th>
                         ))}
-                        <br/>
-                    </li>
-                ))}
-            </ul>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {pokemonList.map((pokemon, index) => (
+                        <tr key={index}>
+                            {selectedFields.map(field => (
+                                <td key={field}>{pokemon[field]}</td>
+                            ))}
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 }
