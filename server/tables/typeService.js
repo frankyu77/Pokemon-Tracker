@@ -28,6 +28,19 @@ class typeService {
             return false;
         }
     }
+
+    async mostPopularType(){
+        const sql = 'SELECT t.TYPE FROM TYPE_WEAKNESS t, POKEMON_CAUGHT p WHERE p.TYPE1 = t.TYPE or p.TYPE2 = t.TYPE GROUP BY TYPE HAVING COUNT(*) = (SELECT MAX(count) FROM (SELECT count(*) AS count FROM TYPE_WEAKNESS t1, POKEMON_CAUGHT p1 WHERE p1.TYPE1 = t1.TYPE or p1.TYPE2 = t1.TYPE GROUP BY TYPE))'
+        const bindings = [];
+        try {
+            const result = await this.db.executeQuery(sql, bindings);
+            console.log(`Most popular type`);
+            return result;
+        } catch (err) {
+            console.error('Failed to get most popular type', err);
+            return false;
+        }
+    }
 }
 
 module.exports = typeService;

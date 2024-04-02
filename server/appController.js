@@ -86,6 +86,7 @@ app.post('/remove-pokemon-caught', async (req, res) => {
     }
 });
 
+
 app.post('/list-pokemon-caught', async (req, res) => {
     try {
         // Fetch Pokémon caught data from the database
@@ -101,11 +102,12 @@ app.post('/list-pokemon-caught', async (req, res) => {
     }
 });
 
-app.post('/projection-pokemon-caught', async (req, res) => {
+app.post('/projection', async (req, res) => {
+    const {fields, tablename} = req.body;
+
     try {
         // Fetch Pokémon caught data from the database
-        const selectedFields = req.body.fields;
-        const sqlQuery = `SELECT ${selectedFields.join(', ')} FROM pokemon_caught`;
+        const sqlQuery = `SELECT ${fields} FROM ${tablename}`;
 
         pokemonCaughtData = await db.executeQueryResult(sqlQuery);
         console.log(pokemonCaughtData);
@@ -114,7 +116,7 @@ app.post('/projection-pokemon-caught', async (req, res) => {
         res.json({ success: true, data: pokemonCaughtData });
     } catch (error) {
         // Handle errors
-        console.error('Error fetching Pokémon caught data:', error);
+        console.error(`Error fetching ${tablename} projection:`, error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
