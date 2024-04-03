@@ -4,18 +4,18 @@ import './index.css';
 import TESTINGAPP from './App';
 import REMOVE from './REMOVE';
 import TESTING2 from './TESTING2'
-import TESTJOIN from './TESTJOIN';
+// import TESTJOIN from './TESTJOIN';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <TESTINGAPP />
-      <REMOVE />
-      <TESTING2 />
-      <TESTJOIN />
-      <App />
+    <TESTINGAPP />
+    <REMOVE />
+    <TESTING2/>
+    {/* <TESTJOIN /> */}
+    <App />
   </React.StrictMode>
 );
 
