@@ -121,6 +121,7 @@ app.post('/remove-pokemon-caught', async (req, res) => {
     }
 });
 
+
 app.post('/projection', async (req, res) => {
     try {
         // Fetch data from the database

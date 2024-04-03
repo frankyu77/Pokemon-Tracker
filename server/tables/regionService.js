@@ -65,6 +65,17 @@ class regionService {
         }
     }
 
+    async averageNumberOfRegionInAGame(){
+        const sql = 'SELECT AVG(count) FROM (SELECT g.GAMEID, count(*) AS count FROM GAME g, REGION_APARTOF r WHERE g.GAMEID = r.GAMEID GROUP BY g.GAMEID)';
+        const bindings = [];
+        try {
+            await this.db.executeQuery(sql, bindings);
+            console.log(`Average number of regions per game success}`);
+        } catch (err){
+            console.error('Error loading avg number of regions per game', err);
+        }
+    }
+
 
 }
 
