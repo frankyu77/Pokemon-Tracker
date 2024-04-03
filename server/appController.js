@@ -126,7 +126,7 @@ app.post('/projection', async (req, res) => {
     try {
         // Fetch data from the database
         const selectedFields = req.body.fields;
-        const sqlQuery = SELECT ${selectedFields} FROM ${req.body.tableName};
+        const sqlQuery = `SELECT ${selectedFields} FROM ${req.body.tableName}`;
 
         queryData = await db.executeQueryResult(sqlQuery);
         console.log(queryData);
@@ -135,7 +135,7 @@ app.post('/projection', async (req, res) => {
         res.json({ success: true, data: queryData });
     } catch (error) {
         // Handle errors
-        console.error(Error fetching ${req.body.tableName} data:, error);
+        console.error(`Error fetching ${req.body.tableName} data:, error`);
         res.status(500).json({ success: false, error: error.message });
     }
 });
