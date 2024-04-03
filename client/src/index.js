@@ -5,6 +5,7 @@ import TESTINGAPP from './App';
 import REMOVE from './REMOVE';
 import TESTING2 from './TESTING2'
 import TESTJOIN from './TESTJOIN';
+import TESTSELECTION from './TESTSELECTION';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 
@@ -15,6 +16,7 @@ root.render(
       <REMOVE />
       <TESTING2 />
       <TESTJOIN />
+        <TESTSELECTION />
       <App />
   </React.StrictMode>
 );

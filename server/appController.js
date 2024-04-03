@@ -52,14 +52,15 @@ app.post('/selection', async (req, res) => {
     const {tableName, whereClause} = req.body;
 
     try {
-        // Fetch Pokémon caught data from the database
-        const selectionResult = await db.executeQueryResult('SELECT * FROM ${tableName} WHERE ${whereClause}');
+        const query = `SELECT * FROM ${tableName} WHERE ${whereClause}`;
+        console.log(query);
+
+        const selectionResult = await db.executeQueryResult(query);
+
         // console.log(pokemonCaughtData);
 
-        // Send the fetched data as a JSON response
         res.json({ success: true, data: selectionResult });
     } catch (error) {
-        // Handle errors
         console.error('Error fetching Pokémon caught data:', error);
         res.status(500).json({ success: false, error: error.message });
     }
@@ -76,7 +77,6 @@ app.post ('/join-pokemon-people', async (req, res) => {
         res.json({ success: true, data: joinResult });
         console.log('after success');
     } catch (error) {
-        // Handle errors
         console.error('Error fetching Pokémon caught data:', error);
         res.status(500).json({ success: false, error: error.message });
     }
@@ -123,14 +123,11 @@ app.post('/remove-pokemon-caught', async (req, res) => {
 
 app.post('/list-pokemon-caught', async (req, res) => {
     try {
-        // Fetch Pokémon caught data from the database
         const pokemonCaughtData = await db.executeQueryResult('SELECT * FROM pokemon_caught');
         console.log(pokemonCaughtData);
 
-        // Send the fetched data as a JSON response
         res.json({ success: true, data: pokemonCaughtData });
     } catch (error) {
-        // Handle errors
         console.error('Error fetching Pokémon caught data:', error);
         res.status(500).json({ success: false, error: error.message });
     }
@@ -138,17 +135,14 @@ app.post('/list-pokemon-caught', async (req, res) => {
 
 app.post('/projection-pokemon-caught', async (req, res) => {
     try {
-        // Fetch Pokémon caught data from the database
         const selectedFields = req.body.fields;
         const sqlQuery = `SELECT ${selectedFields.join(', ')} FROM pokemon_caught`;
 
         pokemonCaughtData = await db.executeQueryResult(sqlQuery);
         console.log(pokemonCaughtData);
 
-        // Send the fetched data as a JSON response
         res.json({ success: true, data: pokemonCaughtData });
     } catch (error) {
-        // Handle errors
         console.error('Error fetching Pokémon caught data:', error);
         res.status(500).json({ success: false, error: error.message });
     }
