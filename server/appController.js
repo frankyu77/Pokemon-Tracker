@@ -49,10 +49,10 @@ const typeService = new TypeService(db);
 
 
 app.post('/selection', async (req, res) => {
-    const { tableName, whereClause } = req.body;
+    const { orClause } = req.body;
 
     try {
-        const query = `SELECT * FROM ${tableName} WHERE ${whereClause}`;
+        const query = `SELECT * FROM pokemon_caught WHERE ${orClause}`;
         console.log(query);
 
         const selectionResult = await db.executeQueryResult(query);

@@ -1,7 +1,7 @@
 import './app/App.css';
 import React, { useEffect, useState } from 'react';
 
-function TESTJOIN() {
+function TESTSELECTION() {
     const [insertResultMsg, setInsertResultMsg] = useState("");
 
     async function joinPokemonTable(event) {
@@ -104,4 +104,4 @@ function TESTJOIN() {
     );
 }
 
-export default TESTJOIN;
+export default TESTSELECTION;
