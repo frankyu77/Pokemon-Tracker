@@ -4,7 +4,7 @@ class questService {
     }
 
     async insertQuest(questID, difficulty, pid, date) {
-        const sql = 'INSERT INTO REGION_APARTOF VALUES(:1, :2, :3, TO_DATE(:4, \'YYYY-MM-DD\'))';
+        const sql = 'INSERT INTO QUEST_ASSIGNED VALUES(:1, :2, :3, TO_DATE(:4, \'YYYY-MM-DD\'))';
         const bindings = [questID, difficulty, pid, date];
         try {
             const result = await this.db.executeQuery(sql, bindings);

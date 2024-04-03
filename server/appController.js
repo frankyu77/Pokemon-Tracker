@@ -47,9 +47,44 @@ const typeService = new TypeService(db);
     }
 })();
 
+
+app.post('/selection', async (req, res) => {
+    const { tableName, whereClause } = req.body;
+
+    try {
+        // Fetch Pokémon caught data from the database
+        const selectionResult = await db.executeQueryResult('SELECT * FROM ${tableName} WHERE ${whereClause}');
+        // console.log(pokemonCaughtData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: selectionResult });
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+
+});
+
+app.post('/join-pokemon-people', async (req, res) => {
+    const { commonAttribute } = req.body;
+
+    try {
+        console.log("asdf");
+        const query = `SELECT * FROM pokemon_caught pc, people_has ph WHERE pc.${commonAttribute} = ph.${commonAttribute}`;
+        const joinResult = await db.executeQueryResult(query);
+        res.json({ success: true, data: joinResult });
+        console.log('after success');
+    } catch (error) {
+        // Handle errors
+        console.error('Error fetching Pokémon caught data:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 // -------------------------------------------------------------------------------------------------------PokemonService
 app.post('/insert-pokemon-caught', async (req, res) => {
-    const {name, type1, type2, specialattack, caught_since, pid} = req.body;
+    const { name, type1, type2, specialattack, caught_since, pid } = req.body;
 
     try {
         // const insertResult = await appService.insertPokemon(name, type1, type2, specialattack, caught_since, pid, db);
@@ -57,9 +92,9 @@ app.post('/insert-pokemon-caught', async (req, res) => {
 
         if (insertResult) {
             await db.executeQuery('commit');
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting Pokemon:', err);
@@ -68,7 +103,7 @@ app.post('/insert-pokemon-caught', async (req, res) => {
 });
 
 app.post('/remove-pokemon-caught', async (req, res) => {
-    const {name} = req.body;
+    const { name } = req.body;
 
     try {
         const insertResult = await pokemonService.removePokemon(name);
@@ -76,9 +111,9 @@ app.post('/remove-pokemon-caught', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing Pokemon:', err);
@@ -86,25 +121,30 @@ app.post('/remove-pokemon-caught', async (req, res) => {
     }
 });
 
-app.post('/list-pokemon-caught', async (req, res) => {
+app.post('/projection', async (req, res) => {
     try {
-        // Fetch Pokémon caught data from the database
-        const pokemonCaughtData = await db.executeQueryResult('SELECT * FROM pokemon_caught');
-        console.log(pokemonCaughtData);
+        // Fetch data from the database
+        const selectedFields = req.body.fields;
+        const sqlQuery = `SELECT ${selectedFields} FROM ${req.body.tableName}`;
+
+        queryData = await db.executeQueryResult(sqlQuery);
+        console.log(queryData);
 
         // Send the fetched data as a JSON response
-        res.json({ success: true, data: pokemonCaughtData });
+        res.json({ success: true, data: queryData });
     } catch (error) {
         // Handle errors
-        console.error('Error fetching Pokémon caught data:', error);
+        console.error(`Error fetching ${req.body.tableName} data:`, error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
+
+
 // -------------------------------------------------------------------------------------------------------PokemonService
 
 // -------------------------------------------------------------------------------------------------------GameService
 app.post('/add-game', async (req, res) => {
-    const {gameID, difficulty, generation} = req.body;
+    const { gameID, difficulty, generation } = req.body;
 
     try {
         const insertResult = await gameService.insertGame(gameID, difficulty, generation);
@@ -112,9 +152,9 @@ app.post('/add-game', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting Game:', err);
@@ -123,7 +163,7 @@ app.post('/add-game', async (req, res) => {
 });
 
 app.post('/remove-game', async (req, res) => {
-    const {gameID} = req.body;
+    const { gameID } = req.body;
 
     try {
         const insertResult = await gameService.removeGame(gameID);
@@ -131,9 +171,9 @@ app.post('/remove-game', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing Game:', err);
@@ -144,7 +184,7 @@ app.post('/remove-game', async (req, res) => {
 
 // -----------------------------------------------------------------------------------------------------GymMasterService
 app.post('/add-gym-master', async (req, res) => {
-    const {pid, name, badge, owns_since} = req.body;
+    const { pid, name, badge, owns_since } = req.body;
 
     try {
         const insertResult = await gymMasterService.insertGymMasterService(pid, name, badge, owns_since);
@@ -152,9 +192,9 @@ app.post('/add-gym-master', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting gym master:', err);
@@ -163,7 +203,7 @@ app.post('/add-gym-master', async (req, res) => {
 });
 
 app.post('/remove-gym-master', async (req, res) => {
-    const {pid} = req.body;
+    const { pid } = req.body;
 
     try {
         const insertResult = await gymMasterService.removeGymMasterService(pid);
@@ -171,9 +211,9 @@ app.post('/remove-gym-master', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing gym master:', err);
@@ -184,7 +224,7 @@ app.post('/remove-gym-master', async (req, res) => {
 
 // -----------------------------------------------------------------------------------------------------GymService
 app.post('/add-gym', async (req, res) => {
-    const {gymNum, difficulty, type, gameID} = req.body;
+    const { gymNum, difficulty, type, gameID } = req.body;
 
     try {
         const insertResult = await gymService.insertGymService(gymNum, difficulty, type, gameID);
@@ -192,9 +232,9 @@ app.post('/add-gym', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting gym:', err);
@@ -203,7 +243,7 @@ app.post('/add-gym', async (req, res) => {
 });
 
 app.post('/remove-gym', async (req, res) => {
-    const {gymNum} = req.body;
+    const { gymNum } = req.body;
 
     try {
         const insertResult = await gymService.removeGymService(gymNum);
@@ -211,9 +251,9 @@ app.post('/remove-gym', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing gym:', err);
@@ -224,7 +264,7 @@ app.post('/remove-gym', async (req, res) => {
 
 // -----------------------------------------------------------------------------------------------------ItemHasService
 app.post('/add-item-has', async (req, res) => {
-    const {itemNum, rarity, gameID, itemName} = req.body;
+    const { itemNum, rarity, gameID, itemName } = req.body;
 
     try {
         const insertResult = await itemHasService.insertItemHas(itemNum, rarity, gameID, itemName);
@@ -232,9 +272,9 @@ app.post('/add-item-has', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting item:', err);
@@ -243,7 +283,7 @@ app.post('/add-item-has', async (req, res) => {
 });
 
 app.post('/remove-item-has', async (req, res) => {
-    const {itemNum} = req.body;
+    const { itemNum } = req.body;
 
     try {
         const insertResult = await itemHasService.removeItemHas(itemNum);
@@ -251,9 +291,9 @@ app.post('/remove-item-has', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing item:', err);
@@ -264,7 +304,7 @@ app.post('/remove-item-has', async (req, res) => {
 
 // -----------------------------------------------------------------------------------------------------LeadsToService
 app.post('/add-leads-to', async (req, res) => {
-    const {regionName, area} = req.body;
+    const { regionName, area } = req.body;
 
     try {
         const insertResult = await leadsToService.insertLeadsTo(regionName, area);
@@ -272,9 +312,9 @@ app.post('/add-leads-to', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error inserting leads to path:', err);
@@ -283,7 +323,7 @@ app.post('/add-leads-to', async (req, res) => {
 });
 
 app.post('/remove-leads-to', async (req, res) => {
-    const {regionName, area} = req.body;
+    const { regionName, area } = req.body;
 
     try {
         const insertResult = await leadsToService.insertLeadsTo(regionName, area);
@@ -291,9 +331,9 @@ app.post('/remove-leads-to', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing leads to path:', err);
@@ -304,7 +344,7 @@ app.post('/remove-leads-to', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------NPC_LIVESINSERVICE
 app.post('/add-NPC-LivesIn', async (req, res) => {
-    const {pid, name, role, region} = req.body;
+    const { pid, name, role, region } = req.body;
 
     try {
         const insertResult = await NPC_livesInService.insertNPC(pid, name, role, region);
@@ -312,9 +352,9 @@ app.post('/add-NPC-LivesIn', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding NPC:', err);
@@ -323,7 +363,7 @@ app.post('/add-NPC-LivesIn', async (req, res) => {
 });
 
 app.post('/remove-NPC-LivesIn', async (req, res) => {
-    const {pid} = req.body;
+    const { pid } = req.body;
 
     try {
         const insertResult = await NPC_livesInService.removeNPC(pid);
@@ -331,9 +371,9 @@ app.post('/remove-NPC-LivesIn', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing NPC:', err);
@@ -344,7 +384,7 @@ app.post('/remove-NPC-LivesIn', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------PeopleService
 app.post('/add-people', async (req, res) => {
-    const {PID, GAMEID} = req.body;
+    const { PID, GAMEID } = req.body;
 
     try {
         const insertResult = await peopleService.insertPeople(PID, GAMEID);
@@ -352,9 +392,9 @@ app.post('/add-people', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding people:', err);
@@ -363,7 +403,7 @@ app.post('/add-people', async (req, res) => {
 });
 
 app.post('/remove-people', async (req, res) => {
-    const {PID} = req.body;
+    const { PID } = req.body;
 
     try {
         const insertResult = await peopleService.removePeople(PID);
@@ -371,9 +411,9 @@ app.post('/remove-people', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing people:', err);
@@ -384,7 +424,7 @@ app.post('/remove-people', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------QuestService
 app.post('/add-quest', async (req, res) => {
-    const {questID, difficulty, pid, date} = req.body;
+    const { questID, difficulty, pid, date } = req.body;
 
     try {
         const insertResult = await questService.insertQuest(questID, difficulty, pid, date);
@@ -392,9 +432,9 @@ app.post('/add-quest', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding quest:', err);
@@ -403,7 +443,7 @@ app.post('/add-quest', async (req, res) => {
 });
 
 app.post('/remove-quest', async (req, res) => {
-    const {questID} = req.body;
+    const { questID } = req.body;
 
     try {
         const insertResult = await questService.removeQuest(questID);
@@ -411,9 +451,9 @@ app.post('/remove-quest', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing quest:', err);
@@ -424,7 +464,7 @@ app.post('/remove-quest', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------RegionService
 app.post('/add-region', async (req, res) => {
-    const {regionName, Type, gymNum, GameId} = req.body;
+    const { regionName, Type, gymNum, GameId } = req.body;
 
     try {
         const insertResult = await regionService.insertRegion(regionName, Type, gymNum, GameId);
@@ -432,9 +472,9 @@ app.post('/add-region', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding region:', err);
@@ -443,7 +483,7 @@ app.post('/add-region', async (req, res) => {
 });
 
 app.post('/remove-region', async (req, res) => {
-    const {regionName} = req.body;
+    const { regionName } = req.body;
 
     try {
         const insertResult = await regionService.removeRegion(regionName);
@@ -451,9 +491,9 @@ app.post('/remove-region', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing region:', err);
@@ -464,7 +504,7 @@ app.post('/remove-region', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------RoleService
 app.post('/add-role', async (req, res) => {
-    const {role, catchPhrase} = req.body;
+    const { role, catchPhrase } = req.body;
 
     try {
         const insertResult = await roleService.insertRole(role, catchPhrase);
@@ -472,9 +512,9 @@ app.post('/add-role', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding role:', err);
@@ -483,7 +523,7 @@ app.post('/add-role', async (req, res) => {
 });
 
 app.post('/remove-role', async (req, res) => {
-    const {role} = req.body;
+    const { role } = req.body;
 
     try {
         const insertResult = await roleService.removeRole(role);
@@ -491,9 +531,9 @@ app.post('/remove-role', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing role:', err);
@@ -504,7 +544,7 @@ app.post('/remove-role', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------TrainerService
 app.post('/add-trainer', async (req, res) => {
-    const {pid, name, favourite} = req.body;
+    const { pid, name, favourite } = req.body;
 
     try {
         const insertResult = await trainerService.insertTrainer(pid, name, favourite);
@@ -512,9 +552,9 @@ app.post('/add-trainer', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding trainer:', err);
@@ -523,7 +563,7 @@ app.post('/add-trainer', async (req, res) => {
 });
 
 app.post('/remove-trainer', async (req, res) => {
-    const {pid} = req.body;
+    const { pid } = req.body;
 
     try {
         const insertResult = await trainerService.removeTrainer(pid);
@@ -531,9 +571,9 @@ app.post('/remove-trainer', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error removing trainer:', err);
@@ -544,7 +584,7 @@ app.post('/remove-trainer', async (req, res) => {
 
 // --------------------------------------------------------------------------------------------------TypeService
 app.post('/add-type', async (req, res) => {
-    const {type, weakness} = req.body;
+    const { type, weakness } = req.body;
 
     try {
         const insertResult = await typeService.insertType(type, weakness);
@@ -552,9 +592,9 @@ app.post('/add-type', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding type:', err);
@@ -563,7 +603,7 @@ app.post('/add-type', async (req, res) => {
 });
 
 app.post('/remove-type', async (req, res) => {
-    const {type} = req.body;
+    const { type } = req.body;
 
     try {
         const insertResult = await typeService.removeType(type);
@@ -571,9 +611,9 @@ app.post('/remove-type', async (req, res) => {
         if (insertResult) {
             const result = await db.executeQuery('commit');
             console.log("committed: " + result);
-            res.json({success: true});
+            res.json({ success: true });
         } else {
-            res.status(500).json({success: false});
+            res.status(500).json({ success: false });
         }
     } catch (err) {
         console.error('Error adding type:', err);

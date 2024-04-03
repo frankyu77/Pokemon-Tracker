@@ -81,12 +81,14 @@ function App() {
 
         // fetchTableData();
       } else {
+        alert("Error inserting data");
         messageElement.textContent = "Error inserting data!";
         setIsError(true); // Set isError to true if there's an error
         setInsertResultMsg("Error inserting data!");
 
       }
     } catch (err) {
+      alert("Error inserting data");
       console.log("ERRORRRRRRRR");
       console.log(err);
       setIsError(true);
@@ -117,7 +119,6 @@ function App() {
 
           <button type="submit"> Enter</button>
         </form>
-        {/*<div id="insertResultPokemonMsg">{insertResultMsg}</div>*/}
         <div id="insertResultPokemonMsg" className={isError ? "error" : "noError"}>{insertResultMsg}</div>
 
       </div>

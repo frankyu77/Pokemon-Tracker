@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="able to list all the data and paste on the client">
-      <change afterPath="$PROJECT_DIR$/client/src/app/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/ContentDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/AddPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/pages/MainPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/app/content/subcomponents/EntityDisplay.js" afterDir="false" />
+    <list default="true" id="de985cee-53be-414f-89e5-687ef6ceebfa" name="Changes" comment="added projection on the pokemon caught">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/app/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/TESTING.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/TESTING2.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/TESTING2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +68,7 @@
     "Node.js.pokemonService.js.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging frank-testing3",
+    "git-widget-placeholder": "frank-testing3",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,9 +85,11 @@
       "oracle"
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src" />
+      <recent name="$PROJECT_DIR$/client/src/app" />
       <recent name="$PROJECT_DIR$/client/public" />
       <recent name="$PROJECT_DIR$/server/tables" />
       <recent name="$PROJECT_DIR$/server/database" />
@@ -113,6 +104,13 @@
         <item itemvalue="Node.js.gameClass.js" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-868cef46" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -220,7 +218,23 @@
       <option name="project" value="LOCAL" />
       <updated>1711990764544</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="merged with main">
+      <option name="closed" value="true" />
+      <created>1711997140912</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1711997140912</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added projection on the pokemon caught">
+      <option name="closed" value="true" />
+      <created>1711999375233</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1711999375233</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,6 +275,8 @@
     <MESSAGE value="added files" />
     <MESSAGE value="implemented the backend connections, but still need to test if it works or not" />
     <MESSAGE value="able to list all the data and paste on the client" />
-    <option name="LAST_COMMIT_MESSAGE" value="able to list all the data and paste on the client" />
+    <MESSAGE value="merged with main" />
+    <MESSAGE value="added projection on the pokemon caught" />
+    <option name="LAST_COMMIT_MESSAGE" value="added projection on the pokemon caught" />
   </component>
 </project>
