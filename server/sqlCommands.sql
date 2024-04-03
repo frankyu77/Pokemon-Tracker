@@ -1,5 +1,6 @@
 -- this is where the scripts for creating all the tables and populating the tables should be
 -- should also have the script for dropping all the tables
+select 'drop table '||table_name||' cascade constraints;' from user_tables;
 
 CREATE TABLE GAME
 (
@@ -412,6 +413,8 @@ insert into type_weakness(type, weakness) values('fairy', 'poison, steel');
 insert into type_weakness(type, weakness) values('water', 'electric, grass');
 
 
+insert into people_has(pid, gameid) values(0, 0);
+insert into people_has(pid, gameid) values(1, 0);
 insert into people_has(pid, gameid) values(2, 0);
 insert into people_has(pid, gameid) values(3, 0);
 insert into people_has(pid, gameid) values(4, 1);
