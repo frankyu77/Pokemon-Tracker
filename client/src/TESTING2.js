@@ -1,80 +1,81 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-function TESTING2() {
-    const [pokemonList, setPokemonList] = useState([]);
-    const [selectedFields, setSelectedFields] =
-        useState(['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID']);
+function TESTING2(props) {
+    const [tableList, setTableList] = useState([]);
+    const [isTableHeaderVisible, setIsTableHeaderVisible] = useState(false);
+    const [selectedFields, setSelectedFields] = useState([]);
+    const [tableName, setTableName] = useState('');
 
-    const fetchPokemonData = useCallback(async () => {
+    const fetchData = useCallback(async () => {
         try {
-            const response = await fetch('http://localhost:3001/projection-pokemon-caught', {
+            const response = await fetch('http://localhost:3001/projection', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ fields: selectedFields })
+                body: JSON.stringify({ fields: selectedFields, tableName: tableName })
             });
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
+
             const data = await response.json();
             if (data.success) {
-                setPokemonList(data.data);
+                setTableList(data.data);
+                setIsTableHeaderVisible(true);
             } else {
-                console.error('Failed to fetch Pokémon caught data:', data.error);
+                console.error(`Failed to fetch ${props.name} data:`, data.error);
             }
         } catch (error) {
-            console.error('Error fetching Pokémon caught data:', error);
+            console.error(`Error fetching ${props.name} data:`, error);
         }
-    }, [selectedFields]);
+    }, [selectedFields, tableName]);
 
-    useEffect(() => {
-        document.getElementById("fetchPokemonDataButton2").addEventListener("click", fetchPokemonData);
-        return () => {
-            document.getElementById("fetchPokemonDataButton2").removeEventListener("click", fetchPokemonData);
-        };
-    }, [fetchPokemonData]);
-
-    const clearPokemonList = () => {
-        setPokemonList([]);
-    };
-
-    const toggleFieldSelection = (fieldName) => {
-        if (selectedFields.includes(fieldName)) {
-            setSelectedFields(selectedFields.filter(field => field !== fieldName));
-        } else {
-            setSelectedFields([...selectedFields, fieldName]);
-        }
+    const clearTableList = () => {
+        setTableList([]);
+        setIsTableHeaderVisible(false);
     };
 
     return (
         <div>
-            <h2>Pokémon Caught</h2>
-            <button id="fetchPokemonDataButton2"> Projection Pokemon </button>
-            <button onClick={clearPokemonList}> Clear Pokémon List </button>
+            <h2>{props.name}</h2>
+
             <div>
-                {['NAME', 'TYPE1', 'TYPE2', 'SPECIALATTACK', 'CAUGHT_SINCE', 'PID'].map(fieldName => (
-                    <button
-                        key={fieldName}
-                        style={{ background: selectedFields.includes(fieldName) ? 'green' : 'grey' }}
-                        onClick={() => toggleFieldSelection(fieldName)}
-                    >
-                        {fieldName}
-                    </button>
-                ))}
+                <label>
+                    Table Name:
+                    <input type="text" onChange={(event) => setTableName(String(event.target.value).toLowerCase())}></input>
+                </label>
+                <br></br>
+                <label>
+                    Fields:
+                    <input type="text" onChange={(event) => setSelectedFields(String(event.target.value).toUpperCase().replaceAll(' ', '').split(','))}></input>
+                </label>
             </div>
-            <ul>
-                {pokemonList.map((pokemon, index) => (
-                    <li key={index}>
-                        {selectedFields.map(field => (
-                            <div key={field}>
-                                {field}: {pokemon[field]}
-                            </div>
+
+            <button onClick={fetchData}> Projection {props.name}</button>
+            <button onClick={clearTableList}> Clear {props.name} List</button>
+
+            {isTableHeaderVisible && ( // Conditionally render the table header
+                <table>
+                    <thead>
+                        <tr>
+                            {selectedFields.map(fieldName => (
+                                <th key={fieldName}>{fieldName}</th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableList.map((item, index) => (
+                            <tr key={index}>
+                                {selectedFields.map(field => (
+                                    <td key={field}>{item[field]}</td>
+                                ))}
+                            </tr>
                         ))}
-                        <br/>
-                    </li>
-                ))}
-            </ul>
+                    </tbody>
+                </table>
+            )}
         </div>
     );
 }
