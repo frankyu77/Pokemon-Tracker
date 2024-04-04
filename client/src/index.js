@@ -9,6 +9,7 @@ import TESTSELECTION from './TESTSELECTION';
 import NEWSELECTION from './NEWSELECTION';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import UPDATEPOKEMON from './UPDATEPOKEMON';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
       <TESTJOIN />
       <TESTSELECTION />
       <NEWSELECTION />
+      <UPDATEPOKEMON/>
       <App />
   </React.StrictMode>
 );

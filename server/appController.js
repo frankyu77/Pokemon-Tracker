@@ -77,6 +77,21 @@ app.post('/selection', async (req, res) => {
 
 });
 
+
+app.post('/updatePokemon', async (req, res) => {
+    const { gameID, gymNum, regionName } = req.body;
+
+    try {
+        const updateResult = await regionService.updateRegionGYM(regionName, gameID, gymNum);
+        res.json({ success: true, data: updateResult });
+    } catch (error) {
+        console.error('Error updating Pokemon region gym:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+
+
 app.post('/join-pokemon-people', async (req, res) => {
     const { commonAttribute } = req.body;
 
