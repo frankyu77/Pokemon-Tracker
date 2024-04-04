@@ -12,7 +12,7 @@ function UPDATEPOKEMON() {
         console.log("Form submitted!");
 
         try {
-            const response = await fetch('http://localhost:3001/updatePokemon', {
+            const response = await fetch('http://localhost:3001/updateRegion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -25,20 +25,20 @@ function UPDATEPOKEMON() {
             })
 
             console.log("after fetch");
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            // if (!response.ok) {
+            //     throw new Error('Network response was not ok');
+            // }
 
             const responseData = await response.json();
 
             if (responseData.success) {
                 setUpdateResultMsg("Region gym updated successfully!");
             } else {
-                setUpdateResultMsg("Error updating region gym!");
+                setUpdateResultMsg(responseData.message|| "Error updating region gym!");
             }
         } catch (err) {
-            console.error("Error updating region gym:", err);
-            setUpdateResultMsg("Error updating region gym!");
+            console.error("TEST Error updating region gym:", err);
+            setUpdateResultMsg(`Error updating region gym: ${err.message}`);
         }
     }
 
@@ -60,6 +60,7 @@ function UPDATEPOKEMON() {
                 </label>
                 <button type="submit">Update Gym</button>
             </form>
+            {updateResultMsg && <p>{updateResultMsg}</p>}
         </div>
     );
 }

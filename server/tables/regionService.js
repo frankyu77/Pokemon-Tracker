@@ -37,7 +37,8 @@ class regionService {
             await this.db.executeQuery(sql, bindings);
             console.log(`"${regionName}" updated successfully.`)
         } catch (err){
-            console.error('Error updating:', err);
+            throw err;
+            //console.error('Error updating:', err);
         }
     }
 

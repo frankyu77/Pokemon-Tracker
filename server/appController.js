@@ -97,7 +97,7 @@ app.post('/selection', async (req, res) => {
 });
 
 
-app.post('/updatePokemon', async (req, res) => {
+app.post('/updateRegion', async (req, res) => {
     const { gameID, gymNum, regionName } = req.body;
 
     try {
@@ -105,7 +105,7 @@ app.post('/updatePokemon', async (req, res) => {
         res.json({ success: true, data: updateResult });
     } catch (error) {
         console.error('Error updating Pokemon region gym:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: 'Error updating Pokemon region gym TEST:', message: error.message });
     }
 });
 
