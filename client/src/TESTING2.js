@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react';
 
-function TESTING2(props) {
+function TESTING2() {
     const [tableList, setTableList] = useState([]);
     const [isTableHeaderVisible, setIsTableHeaderVisible] = useState(false);
     const [selectedFields, setSelectedFields] = useState([]);
@@ -25,10 +25,10 @@ function TESTING2(props) {
                 setTableList(data.data);
                 setIsTableHeaderVisible(true);
             } else {
-                console.error(`Failed to fetch ${props.name} data:`, data.error);
+                console.error(`Failed to fetch projection data:`, data.error);
             }
         } catch (error) {
-            console.error(`Error fetching ${props.name} data:`, error);
+            console.error(`Error fetching projection data:`, error);
         }
     }, [selectedFields, tableName]);
 
@@ -39,7 +39,7 @@ function TESTING2(props) {
 
     return (
         <div>
-            <h2>{props.name}</h2>
+            <h2>Projection</h2>
 
             <div>
                 <label>
@@ -53,8 +53,8 @@ function TESTING2(props) {
                 </label>
             </div>
 
-            <button onClick={fetchData}> Projection {props.name}</button>
-            <button onClick={clearTableList}> Clear {props.name} List</button>
+            <button onClick={fetchData}> Projection</button>
+            <button onClick={clearTableList}> Clear List</button>
 
             {isTableHeaderVisible && ( // Conditionally render the table header
                 <table>

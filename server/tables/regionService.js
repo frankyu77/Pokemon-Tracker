@@ -47,10 +47,12 @@ class regionService {
         const sql = 'SELECT GAMEID FROM REGION_APARTOF GROUP BY GAMEID HAVING COUNT(*) = (SELECT MIN(COUNT(*)) FROM REGION_APARTOF a GROUP BY GAMEID)';
         const bindings = [];
         try {
-            await this.db.executeQuery(sql, bindings);
+            data = await this.db.executeQuery(sql, bindings);
             console.log(`Game with least number of regions}`);
+            return data;
         } catch (err){
             console.error('Error getting game with least # of regions', err);
+            return null;
         }
     }
 
@@ -70,14 +72,14 @@ class regionService {
         const sql = 'SELECT AVG(count) FROM (SELECT g.GAMEID, count(*) AS count FROM GAME g, REGION_APARTOF r WHERE g.GAMEID = r.GAMEID GROUP BY g.GAMEID)';
         const bindings = [];
         try {
-            await this.db.executeQuery(sql, bindings);
+            data = await this.db.executeQuery(sql, bindings);
             console.log(`Average number of regions per game success}`);
+            return data;
         } catch (err){
             console.error('Error loading avg number of regions per game', err);
+            return null;
         }
     }
-
-
 }
 
 module.exports = regionService;
