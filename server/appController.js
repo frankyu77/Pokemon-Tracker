@@ -47,6 +47,25 @@ const typeService = new TypeService(db);
     }
 })();
 
+app.post('/select-start', async (req, res) => {
+    const { tableName } = req.body;
+
+    try {
+        const query = `SELECT * FROM ${tableName}`;
+        console.log(query);
+
+        const selectionResult = await db.executeQueryResult(query);
+
+        // console.log(pokemonCaughtData);
+        console.log("selectionResult = " + selectionResult);
+
+        res.json({ success: true, data: selectionResult });
+    } catch (error) {
+        console.error('Error updating Pokemon region gym:', error);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
 
 app.post('/selection', async (req, res) => {
     const { orClause, andClause } = req.body;
