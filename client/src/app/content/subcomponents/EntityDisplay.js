@@ -19,6 +19,7 @@ function EntityDisplay(props) {
                 <button id="remove-button">Remove</button>
             </div>
         </div>
+
     );
 }
 
