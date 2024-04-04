@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom'
 
 function EntityDisplay(props) {
     return (
-        <div id={props.name} class="entity">
+        <div id={props.name} className="entity">
             <h2 id="name">{props.name}</h2>
-            <table id="data"> {populateTable(props.attributes, props.data)} </table>
+            <div className="table-container">
+                <table id="data" className="data-table">{populateTable(props.attributes, props.data)}</table>
+            </div>
             <div id="buttons">
                 <Link to='/addpage' state={props.name}>
                     <button id="add-button">Add</button>

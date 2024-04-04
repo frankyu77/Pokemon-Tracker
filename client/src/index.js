@@ -14,20 +14,33 @@ import AggregateQueryButton from './AggregateQueryButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <TESTINGAPP />
-      <REMOVE />
-      <TESTING2/>
-      <TESTJOIN />
-      <TESTSELECTION />
-      <NEWSELECTION />
-      <UPDATEPOKEMON/>
-      {/* <App /> */}
-      <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>
-      <AggregateQueryButton aggregateName="game with least regions" fetchUrl="/game-least-regions"/>
-      <AggregateQueryButton aggregateName="most popular type" fetchUrl="/type-most-popular"/>
-      <AggregateQueryButton aggregateName="game with all roles" fetchUrl="/game-all-roles"/>
-  </React.StrictMode>
+    <React.StrictMode>
+          {/*<h1 id='title'>Pokemon Game</h1>*/}
+          {/*/!*<TESTINGAPP/>*!/*/}
+          {/*/!*<REMOVE/>*!/*/}
+          {/*<TESTING2/>*/}
+          {/*<TESTJOIN/>*/}
+          {/*<TESTSELECTION/>*/}
+          {/*<NEWSELECTION/>*/}
+          {/*<UPDATEPOKEMON/>*/}
+          {/*<App/>*/}
+          <div className="container">
+                <h1 id='title'>Pokemon Game</h1>
+                <div>
+                      <TESTINGAPP />
+                      <REMOVE />
+                      <TESTING2/>
+                      <TESTJOIN />
+                      <TESTSELECTION />
+                      <NEWSELECTION />
+                      <UPDATEPOKEMON/>
+                      <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>
+                      <AggregateQueryButton aggregateName="game with least regions" fetchUrl="/game-least-regions"/>
+                      <AggregateQueryButton aggregateName="most popular type" fetchUrl="/type-most-popular"/>
+                      <AggregateQueryButton aggregateName="game with all roles" fetchUrl="/game-all-roles"/>
+                      <App/>
+                </div>
+          </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

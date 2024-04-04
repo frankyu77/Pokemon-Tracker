@@ -12,7 +12,7 @@
 }
 
 #data {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
 }
 
 #data tr {
@@ -27,4 +27,25 @@
 
 #buttons button {
     width: 50%;
+}
+
+.table-container {
+    height: 300px;
+    overflow: auto;
+    /*border: 2px solid black;*/
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
 }
