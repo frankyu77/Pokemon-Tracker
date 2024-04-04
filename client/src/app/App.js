@@ -5,7 +5,7 @@ function App() {
 
   return (
     <div id='app'>
-      <h1 id='title'>Pokemon Game</h1>
+      {/*<h1 id='title'>Pokemon Game</h1>*/}
       <ContentDisplay />
     </div>
   );

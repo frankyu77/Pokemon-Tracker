@@ -13,16 +13,29 @@ import UPDATEPOKEMON from './UPDATEPOKEMON';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <TESTINGAPP />
-      <REMOVE />
-      <TESTING2 />
-      <TESTJOIN />
-      <TESTSELECTION />
-      <NEWSELECTION />
-      <UPDATEPOKEMON/>
-      <App />
-  </React.StrictMode>
+    <React.StrictMode>
+          {/*<h1 id='title'>Pokemon Game</h1>*/}
+          {/*/!*<TESTINGAPP/>*!/*/}
+          {/*/!*<REMOVE/>*!/*/}
+          {/*<TESTING2/>*/}
+          {/*<TESTJOIN/>*/}
+          {/*<TESTSELECTION/>*/}
+          {/*<NEWSELECTION/>*/}
+          {/*<UPDATEPOKEMON/>*/}
+          {/*<App/>*/}
+          <div className="container">
+                <h1 id='title'>Pokemon Game</h1>
+                <div>
+                      {/* Your components */}
+                      <TESTING2/>
+                      <TESTJOIN/>
+                      <TESTSELECTION/>
+                      <NEWSELECTION/>
+                      <UPDATEPOKEMON/>
+                      <App/>
+                </div>
+          </div>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -64,8 +64,17 @@ function ContentDisplay() {
     }
 
     useEffect(() => {
-        let test = await fetchData('gymMasters_owns', setGymMastersData);
-        console.log(test);
+        async function fetchDataAndSetData() {
+            try {
+                const test = await fetchData('gymMasters_owns', setGymMastersData);
+                console.log("gymmaster_owns");
+                console.log(test);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        fetchDataAndSetData();
     }, []);
 
     useEffect(() => {
