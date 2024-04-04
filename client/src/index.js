@@ -10,18 +10,23 @@ import NEWSELECTION from './NEWSELECTION';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import UPDATEPOKEMON from './UPDATEPOKEMON';
+import AggregateQueryButton from './AggregateQueryButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <TESTINGAPP />
       <REMOVE />
-      <TESTING2 />
+      <TESTING2/>
       <TESTJOIN />
       <TESTSELECTION />
       <NEWSELECTION />
       <UPDATEPOKEMON/>
-      <App />
+      {/* <App /> */}
+      <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>
+      <AggregateQueryButton aggregateName="game with least regions" fetchUrl="/game-least-regions"/>
+      <AggregateQueryButton aggregateName="most popular type" fetchUrl="/type-most-popular"/>
+      <AggregateQueryButton aggregateName="game with all roles" fetchUrl="/game-all-roles"/>
   </React.StrictMode>
 );
 
