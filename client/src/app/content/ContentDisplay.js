@@ -64,20 +64,6 @@ function ContentDisplay() {
     }
 
     useEffect(() => {
-        async function fetchDataAndSetData() {
-            try {
-                const test = await fetchData('gymMasters_owns', setGymMastersData);
-                console.log("gymmaster_owns");
-                console.log(test);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        }
-
-        fetchDataAndSetData();
-    }, []);
-
-    useEffect(() => {
         fetchData('game', setGameData);
         fetchData('items_has', setItemData);
         fetchData('gym_includes', setGymIncludesData);
@@ -88,7 +74,7 @@ function ContentDisplay() {
         fetchData('people_Has', setPeopleHas);
         fetchData('pokemon_caught', setPokemonData);
         fetchData('badge_Gym', setBadgeGymData);
-        fetchData('gymMasters_owns', setGymMastersData);
+        fetchData('GYMMASTER_OWNS', setGymMastersData);
         fetchData('role_CatchPhrase', setRoleCatchPhraseData);
         fetchData('NPC_LivesIn', setNPCLivesInData);
         fetchData('trainer', setTrainersData);
