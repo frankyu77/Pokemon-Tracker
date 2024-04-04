@@ -31,7 +31,6 @@ root.render(
                       <REMOVE />
                       <TESTING2/>
                       <TESTJOIN />
-                      <TESTSELECTION />
                       <NEWSELECTION />
                       <UPDATEPOKEMON/>
                       <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>

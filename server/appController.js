@@ -91,7 +91,7 @@ app.post('/selection', async (req, res) => {
         res.json({ success: true, data: selectionResult });
     } catch (error) {
         console.error('Error fetching Pokémon caught data:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: error.message, message: error.message });
     }
 
 });
