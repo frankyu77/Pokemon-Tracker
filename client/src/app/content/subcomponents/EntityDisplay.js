@@ -17,27 +17,26 @@ function EntityDisplay(props) {
 }
 
 const populateTable = (attributes, rawData) => {
+    if (!attributes || !rawData || rawData.length === 0) {
+        return null; // Handle empty data gracefully
+    }
+
     const table = [];
-    const tableHeaders = [];
+    const tableHeaders = attributes.map((attribute, index) => (
+        <th key={index}>{attribute}</th>
+    ));
 
-    for (const attribute of attributes) {
-        tableHeaders.push(<th>{attribute}</th>)
-    }
+    table.push(<tr key="header">{tableHeaders}</tr>);
 
-    table.push(<tr> {tableHeaders} </tr>)
-
-    for (const dataRow of rawData) {
-
-        const tableRow = []
-
-        for (const dataColumn of dataRow) {
-            tableRow.push(<td> {dataColumn} </td>)
-        }
-
-        table.push(<tr> {tableRow} </tr>)
-    }
+    rawData.forEach((dataRow, rowIndex) => {
+        const tableRow = dataRow.map((dataColumn, colIndex) => (
+            <td key={`${rowIndex}-${colIndex}`}>{dataColumn}</td>
+        ));
+        table.push(<tr key={`row-${rowIndex}`}>{tableRow}</tr>);
+    });
 
     return table;
 };
+
 
 export default EntityDisplay
