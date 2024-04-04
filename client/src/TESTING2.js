@@ -39,7 +39,6 @@ function TESTING2() {
 
     return (
         <div>
-            <h2>{props.name}</h2>
             <h2>Projection</h2>
 
             <div>
