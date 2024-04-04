@@ -42,21 +42,17 @@ function UPDATEPOKEMON() {
         }
     }
 
-    const clearUpdateResultMsg = () => {
-        setUpdateResultMsg("");
-    };
-
     return (
         <div>
             <h2>Update Pokémon Region Gym</h2>
             <form onSubmit={updateRegionGym}>
                 <label>
-                    Game ID:
-                    <input type="text" value={gameID} onChange={(e) => setGameID(e.target.value)} required />
-                </label>
-                <label>
                     Region Name:
                     <input type="text" value={regionName} onChange={(e) => setRegionName(e.target.value)} required />
+                </label>
+                <label>
+                    Game ID:
+                    <input type="text" value={gameID} onChange={(e) => setGameID(e.target.value)} required />
                 </label>
                 <label>
                     Gym Number:
@@ -64,8 +60,6 @@ function UPDATEPOKEMON() {
                 </label>
                 <button type="submit">Update Gym</button>
             </form>
-            <button onClick={clearUpdateResultMsg}>Clear Update Result</button>
-            <div>{updateResultMsg}</div>
         </div>
     );
 }

@@ -73,10 +73,9 @@ app.post('/updatePokemon', async (req, res) => {
 
     try {
         const updateResult = await regionService.updateRegionGYM(regionName, gameID, gymNum);
-
         res.json({ success: true, data: updateResult });
     } catch (error) {
-        console.error('Error updating Pokémon region gym:', error);
+        console.error('Error updating Pokemon region gym:', error);
         res.status(500).json({ success: false, error: error.message });
     }
 });
