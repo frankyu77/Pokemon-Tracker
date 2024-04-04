@@ -7,30 +7,40 @@ function ContentDisplay() {
 
     const attributes = {
         game: ['Game ID', 'Difficulty', 'Generation'],
-        pokemon: ['Name', 'Type', 'Weakness', 'Special Attack'],
-        items: ['Item #', 'Rarity'],
-        people: ['Pid', 'Name'],
-        gyms: ['Gym #', 'Type', 'Difficulty'],
-        "gym masters": ['Pid', 'Name', 'Badge'],
-        npcs: ['Pid', 'Name', 'Role', 'Catch Phrase'],
-        trainers: ['Pid', 'Name', 'Favourite Pokemon'],
-        regions: ['Name', 'Type'],
-        quests: ['Quest Id', 'Difficulty', 'Reward'],
-        "enterable areas": ['Area #', 'Type']
+        items: ['Item #', 'Rarity', 'Game ID', 'Item Name'],
+        gym_includes: ['Gym #', 'Difficulty', 'Type', 'Game ID'],
+        region_apartof : ['Name', 'Type', "Gym #", "Game ID"],
+        enterableAreas : ['Area #', 'Type'],
+        leadsTo : ['Region Name', 'Area #'],
+        typeWeakness : ['Type', 'Weakness'],
+        peopleHas: ['PID', 'Game ID'],
+        pokemon: ['Name', 'Type1', 'Type2', 'Special', 'Date', 'PID'],
+        badgeGym: ['Badge', 'Gym #', 'Game ID'],
+        gymMasters: ['PID', 'Name', 'Badge', 'Since'],
+        roleCatchPhrase : ['Role', 'Phrase'],
+        NPCLivesIn: ['Pid', 'Name', 'Role', 'Phrase'],
+        trainers: ['PID', 'Name', 'Favourite Pokemon'],
+        difficultyReward : ['Difficulty', 'Reward'],
+        quests: ['Quest ID', 'Difficulty', 'PID', 'Accepted']
     }
 
     const data = {
-        game: [['a', 'b', 'c'], ['d', 'e', 'f']],
-        pokemon: [['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']],
-        items: [['a', 'b'], ['c', 'd']],
-        people: [['a', 'b'], ['c', 'd']],
-        gyms: [['a', 'b', 'c'], ['d', 'e', 'f']],
-        "gym masters": [['a', 'b', 'c'], ['d', 'e', 'f']],
-        npcs: [['a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']],
-        trainers: [['a', 'b', 'c'], ['d', 'e', 'f']],
-        regions: [['a', 'b'], ['c', 'd']],
-        quests: [['a', 'b', 'c'], ['d', 'e', 'f']],
-        "enterable areas": [['a', 'b'], ['c', 'd']]
+        game: [['Game ID', 'Difficulty', 'Generation']],
+        items: [['Item #', 'Rarity', 'Game ID', 'Item Name']],
+        gym_includes: [['Gym #', 'Difficulty', 'Type', 'Game ID']],
+        region_apartof : [['Name', 'Type', "Gym #", "Game ID"]],
+        enterableAreas : [['Area #', 'Type']],
+        leadsTo : [['Region Name', 'Area #']],
+        typeWeakness : [['Type', 'Weakness']],
+        peopleHas: [['PID', 'Game ID']],
+        pokemon: [['Name', 'Type1', 'Type2', 'Special Attack', 'Caught_Since', 'PID']],
+        badgeGym: [['Badge', 'Gym #', 'Game ID']],
+        gymMasters: [['PID', 'Name', 'Badge', 'Owns_Since']],
+        roleCatchPhrase : [['Role', 'Catch_Phrase']],
+        NPCLivesIn: [['Pid', 'Name', 'Role', 'Catch_Phrase']],
+        trainers: [['PID', 'Name', 'Favourite Pokemon']],
+        difficultyReward : [['Difficulty', 'Reward']],
+        quests: [['Quest ID', 'Difficulty', 'PID', 'Date_Accepted']]
     }
 
     return (

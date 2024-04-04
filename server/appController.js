@@ -49,15 +49,25 @@ const typeService = new TypeService(db);
 
 
 app.post('/selection', async (req, res) => {
-    const { orClause } = req.body;
+    const { orClause, andClause } = req.body;
+    let whereClause = "";
+    if (orClause === "" && andClause != "") {
+        whereClause = "WHERE " + andClause;
+    } else if (orClause != "" && andClause === "") {
+        whereClause = "WHERE " + orClause;
+    } else {
+        whereClause = "WHERE (" + orClause + ")" + " OR " + "(" + andClause + ")";
+    }
+
 
     try {
-        const query = `SELECT * FROM pokemon_caught WHERE ${orClause}`;
+        const query = `SELECT * FROM pokemon_caught ${whereClause}`;
         console.log(query);
 
         const selectionResult = await db.executeQueryResult(query);
 
         // console.log(pokemonCaughtData);
+        console.log(selectionResult);
 
         res.json({ success: true, data: selectionResult });
     } catch (error) {
