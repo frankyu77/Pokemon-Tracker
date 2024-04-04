@@ -8,6 +8,7 @@ import TESTJOIN from './TESTJOIN';
 import TESTSELECTION from './TESTSELECTION';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
+import UPDATEPOKEMON from './UPDATEPOKEMON';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <TESTING2 />
       <TESTJOIN />
         <TESTSELECTION />
+      <UPDATEPOKEMON/>
       <App />
   </React.StrictMode>
 );
