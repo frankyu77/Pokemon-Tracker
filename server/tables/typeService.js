@@ -20,7 +20,7 @@ class typeService {
         const sql = 'DELETE FROM TYPE_WEAKNESS WHERE TYPE = :1';
         const bindings = [type];
         try {
-            const result = await this.db.executeQuery(sql, bindings);
+            const result = await this.db.executeQuery(sql,bindings)
             console.log(`"${type}" removed successfully.`);
             return result;
         } catch (err) {

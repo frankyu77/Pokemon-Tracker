@@ -10,6 +10,7 @@ import NEWSELECTION from './NEWSELECTION';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import UPDATEPOKEMON from './UPDATEPOKEMON';
+import AggregateQueryButton from './AggregateQueryButton';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -26,16 +27,20 @@ root.render(
           <div className="container">
                 <h1 id='title'>Pokemon Game</h1>
                 <div>
-                      {/* Your components */}
+                      <TESTINGAPP />
+                      <REMOVE />
                       <TESTING2/>
-                      <TESTJOIN/>
-                      <TESTSELECTION/>
-                      <NEWSELECTION/>
+                      <TESTJOIN />
+                      <TESTSELECTION />
+                      <NEWSELECTION />
                       <UPDATEPOKEMON/>
+                      <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>
+                      <AggregateQueryButton aggregateName="game with least regions" fetchUrl="/game-least-regions"/>
+                      <AggregateQueryButton aggregateName="most popular type" fetchUrl="/type-most-popular"/>
+                      <AggregateQueryButton aggregateName="game with all roles" fetchUrl="/game-all-roles"/>
                       <App/>
                 </div>
           </div>
-    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

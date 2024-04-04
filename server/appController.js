@@ -225,6 +225,20 @@ app.post('/remove-game', async (req, res) => {
         res.status(500).json({ success: false });
     }
 });
+
+app.post('/game-all-roles', async (req, res) => {
+    try {
+        queryData = await gameService.gameWithAllRoles();
+        console.log(queryData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: queryData });
+    } catch (error) {
+        // Handle errors
+        console.error(`Error fetching game with least regions data:, error`);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 // -------------------------------------------------------------------------------------------------------GameService
 
 // -----------------------------------------------------------------------------------------------------GymMasterService
@@ -545,6 +559,34 @@ app.post('/remove-region', async (req, res) => {
         res.status(500).json({ success: false });
     }
 });
+
+app.post('/average-region-count', async (req, res) => {
+    try {
+        queryData = await regionService.averageNumberOfRegionInAGame();
+        console.log(queryData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: queryData });
+    } catch (error) {
+        // Handle errors
+        console.error(`Error fetching average region count data:, error`);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
+
+app.post('/game-least-regions', async (req, res) => {
+    try {
+        queryData = await regionService.gameWithLeastRegions();
+        console.log(queryData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: queryData });
+    } catch (error) {
+        // Handle errors
+        console.error(`Error fetching game with least regions data:, error`);
+        res.status(500).json({ success: false, error: error.message });
+    }
+});
 // --------------------------------------------------------------------------------------------------RegionService
 
 // --------------------------------------------------------------------------------------------------RoleService
@@ -663,6 +705,20 @@ app.post('/remove-type', async (req, res) => {
     } catch (err) {
         console.error('Error adding type:', err);
         res.status(500).json({ success: false });
+    }
+});
+
+app.post('/type-most-popular', async (req, res) => {
+    try {
+        queryData = await typeService.mostPopularType();
+        console.log(queryData);
+
+        // Send the fetched data as a JSON response
+        res.json({ success: true, data: queryData });
+    } catch (error) {
+        // Handle errors
+        console.error(`Error fetching game with least regions data:, error`);
+        res.status(500).json({ success: false, error: error.message });
     }
 });
 
