@@ -44,9 +44,8 @@ class regionService {
     async gameWithLeastRegions(){
         // group By, having, Nested aggregation with Group by
         const sql = 'SELECT GAMEID FROM REGION_APARTOF GROUP BY GAMEID HAVING COUNT(*) = (SELECT MIN(COUNT(*)) FROM REGION_APARTOF a GROUP BY GAMEID)';
-        const bindings = [];
         try {
-            data = await this.db.executeQuery(sql, bindings);
+            const data = await this.db.executeQueryResult(sql);
             console.log(`Game with least number of regions}`);
             return data;
         } catch (err){
@@ -69,9 +68,8 @@ class regionService {
 
     async averageNumberOfRegionInAGame(){
         const sql = 'SELECT AVG(count) FROM (SELECT g.GAMEID, count(*) AS count FROM GAME g, REGION_APARTOF r WHERE g.GAMEID = r.GAMEID GROUP BY g.GAMEID)';
-        const bindings = [];
         try {
-            data = await this.db.executeQuery(sql, bindings);
+            const data = await this.db.executeQueryResult(sql);
             console.log(`Average number of regions per game success}`);
             return data;
         } catch (err){

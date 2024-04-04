@@ -6,7 +6,11 @@ function EntityDisplay(props) {
         <div id={props.name} className="entity">
             <h2 id="name">{props.name}</h2>
             <div className="table-container">
-                <table id="data" className="data-table">{populateTable(props.attributes, props.data)}</table>
+                <table id="data" className="data-table">
+                    <tbody>
+                        {populateTable(props.attributes, props.data)}
+                    </tbody>
+                </table>
             </div>
             <div id="buttons">
                 <Link to='/addpage' state={props.name}>
