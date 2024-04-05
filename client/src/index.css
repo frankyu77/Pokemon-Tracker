@@ -26,3 +26,21 @@ code {
   align-items: center;
   /*height: 100vh; !* Adjust as needed *!*/
 }
+
+.aggregates-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.aggregate-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.proj-join {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
