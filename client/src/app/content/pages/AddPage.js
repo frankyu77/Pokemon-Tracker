@@ -10,9 +10,6 @@ function AddPage(props) {
 
     async function insertTable(input) {
         try {
-            const sql = `INSERT INTO ${tableName} (${Object.keys(input).join(', ')})
-                             VALUES (${Object.values(input).join(', ')})`;
-            console.log(sql);
             const response = await fetch('http://localhost:3001/insert', {
                 method: 'POST',
                 headers: {

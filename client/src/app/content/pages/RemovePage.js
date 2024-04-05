@@ -7,13 +7,14 @@ function RemovePage(props) {
     const name = useLocation().state['name'];
     const tableName = useLocation().state['tableName'];
 
-    const primaryKey = props.attributes[name][0];
+    const primaryKey = String(props.attributes[name][0]).toLowerCase();
 
     const [input, setInput] = useState("");
 
     async function removeData(input) {
         try {
-            console.log(input);
+            const sql = `DELETE FROM ${tableName} WHERE ${primaryKey} = ${input}`
+            console.log(sql);
             const response = await fetch('http://localhost:3001/remove', {
                 method: 'POST',
                 headers: {
