@@ -1,15 +1,16 @@
 import './RemovePage.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate} from 'react-router-dom'
 import React, { useEffect, useState } from 'react';
 
 function RemovePage(props) {
-
+    const navigate = useNavigate();
+    const [RemoveMsg, setRemoveMsg] = useState("");
     const name = useLocation().state['name'];
     const tableName = useLocation().state['tableName'];
 
     const primaryKey = String(props.attributes[name][0]).toLowerCase();
 
-    const [input, setInput] = useState();
+    const [input, setInput] = useState(Number || String);
 
     async function removeData(input) {
         try {
@@ -29,7 +30,13 @@ function RemovePage(props) {
 
             if (responseData.success) {
                 console.log('Removed successfully');
-                window.location.reload();
+                setRemoveMsg("Removed successfully");
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } else {
                 console.log("Error removing data!");
             }
@@ -43,13 +50,12 @@ function RemovePage(props) {
             <form id="remove-form">
                 <label id="input-area">
                     <span>{primaryKey}: </span>
-                    <input type="text" onBlur={event => setInput(Number(event.target.value) || `'${event.target.value}'`)}></input>
+                    <input type="text"
+                           onBlur={event => setInput(Number(event.target.value) || `'${event.target.value}'`)}></input>
                 </label>
             </form>
-
-            <Link to='/'>
                 <button onClick={() => removeData(input)}>Remove</button>
-            </Link>
+            {RemoveMsg && <p>{RemoveMsg}</p>}
         </div>
     );
 }
