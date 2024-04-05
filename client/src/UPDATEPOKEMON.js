@@ -33,6 +33,9 @@ function UPDATEPOKEMON() {
 
             if (responseData.success) {
                 setUpdateResultMsg("Region gym updated successfully!");
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } else {
                 setUpdateResultMsg(responseData.message|| "Error updating region gym!");
             }
