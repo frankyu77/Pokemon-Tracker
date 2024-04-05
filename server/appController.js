@@ -122,7 +122,7 @@ app.post('/join-pokemon-people', async (req, res) => {
         console.log('after success');
     } catch (error) {
         console.error('Error fetching Pokémon caught data:', error);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: error.message, message: error.message });
     }
 });
 

@@ -23,9 +23,9 @@ function TESTJOIN() {
             })
 
             console.log("after fetch");
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            // if (!response.ok) {
+            //     throw new Error('Network response was not ok');
+            // }
 
             const responseData = await response.json();
 
@@ -59,14 +59,13 @@ function TESTJOIN() {
                 setInsertResultMsg(table);
                 // fetchTableData();
             } else {
-                messageElement.textContent = "Error removing data!";
-                setInsertResultMsg("Error removing data!");
-
+                throw new Error(responseData.error);
             }
         } catch (err) {
             console.log("ERRORRRRRRRR");
             console.log(err);
-            setInsertResultMsg("Error removing data!");
+
+            setInsertResultMsg(err.message);
         }
     }
 
