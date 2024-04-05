@@ -113,6 +113,7 @@ app.post('/insert', async (req, res) => {
     try {
         const sql = `INSERT INTO ${req.body.tableName} (${Object.keys(req.body.input).join(', ')})
                              VALUES (${Object.values(req.body.input).join(', ')})`;
+                             
         const insertResult = await db.executeQuery(sql);
 
         if (insertResult) {

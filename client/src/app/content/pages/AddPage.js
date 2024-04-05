@@ -3,14 +3,22 @@ import { Link, useLocation } from 'react-router-dom'
 
 function AddPage(props) {
 
+    const name = useLocation().state['name'];
+    const tableName = useLocation().state['tableName'];
+
+    const input = {}
+
     async function insertTable(input) {
         try {
+            const sql = `INSERT INTO ${tableName} (${Object.keys(input).join(', ')})
+                             VALUES (${Object.values(input).join(', ')})`;
+            console.log(sql);
             const response = await fetch('http://localhost:3001/insert', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ tableName: props.tableName, input: input })
+                body: JSON.stringify({ tableName: tableName, input: input })
             })
 
             console.log("after fetch");
@@ -26,10 +34,6 @@ function AddPage(props) {
             console.log("ERRORRRRRRRR");
         }
     }
-
-    const name = useLocation().state;
-
-    const input = {}
 
     return (
         <div id="add-page">

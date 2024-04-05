@@ -4,7 +4,10 @@ import React, { useEffect, useState } from 'react';
 
 function RemovePage(props) {
 
-    const primaryKey = props.attributes[useLocation().state][0];
+    const name = useLocation().state['name'];
+    const tableName = useLocation().state['tableName'];
+
+    const primaryKey = props.attributes[name][0];
 
     const [input, setInput] = useState("");
 
@@ -16,7 +19,7 @@ function RemovePage(props) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ tableName: props.tableName, primaryKey: primaryKey, input: input })
+                body: JSON.stringify({ tableName: tableName, primaryKey: primaryKey, input: input })
             })
 
             console.log("after fetch");

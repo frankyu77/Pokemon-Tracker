@@ -13,10 +13,10 @@ function EntityDisplay(props) {
                 </table>
             </div>
             <div id="buttons">
-                <Link to='/addpage' state={props.name}>
+                <Link to='/addpage' state={{name: props.name, tableName: props.tableName}}>
                     <button id="add-button">Add</button>
                 </Link>
-                <Link to='/removepage' state={props.name}>
+                <Link to='/removepage' state={{name: props.name, tableName: props.tableName}}>
                 <button id="remove-button">Remove</button>
                 </Link>
             </div>
