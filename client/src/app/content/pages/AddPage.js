@@ -23,7 +23,8 @@ function AddPage(props) {
             const responseData = await response.json();
 
             if (responseData.success) {
-                console.log('Inserted successfully')
+                console.log('Inserted successfully');
+                window.location.reload();
             } else {
                 console.log("Error inserting data!");
             }

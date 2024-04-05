@@ -28,7 +28,8 @@ function RemovePage(props) {
             const responseData = await response.json();
 
             if (responseData.success) {
-                console.log('Removed successfully')
+                console.log('Removed successfully');
+                window.location.reload();
             } else {
                 console.log("Error removing data!");
             }
