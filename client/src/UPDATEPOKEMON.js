@@ -46,17 +46,22 @@ function UPDATEPOKEMON() {
         <div>
             <h3>Update Pokémon Region Gym</h3>
             <form onSubmit={updateRegionGym} style={{marginLeft: '10px'}}>
+                <h4 style={{marginBottom: '-1rem'}}>Which region would you like to update?</h4>
+                <br/>
                 <label>
                     Region Name:
-                    <input type="text" value={regionName} onChange={(e) => setRegionName(e.target.value)} required />
+                    <input type="text" value={regionName} onChange={(e) => setRegionName(e.target.value)} required/>
                 </label>
+                <br/>
+                <h4 style={{marginBottom: '-2rem'}}>What game and gym would you like to change for that region?</h4>
+                <br/>
                 <label>
                     Game ID:
-                    <input type="text" value={gameID} onChange={(e) => setGameID(e.target.value)} required />
+                    <input type="text" value={gameID} onChange={(e) => setGameID(e.target.value)} required/>
                 </label>
-                <label>
+                <label style={{marginLeft: '5px'}}>
                     Gym Number:
-                    <input type="text" value={gymNumber} onChange={(e) => setGymNumber(e.target.value)} required />
+                    <input type="text" value={gymNumber} onChange={(e) => setGymNumber(e.target.value)} required/>
                 </label>
                 <button type="submit">Update Gym</button>
             </form>
