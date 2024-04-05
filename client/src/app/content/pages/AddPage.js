@@ -11,7 +11,6 @@ function AddPage(props) {
     const input = {}
 
     const handleClick = () => {
-        // Navigate to the specified path
         navigate('/');
     };
 
@@ -33,7 +32,6 @@ function AddPage(props) {
                 console.log('Inserted successfully');
                 setInsertMsg("Inserted successfully!");
                 setTimeout(() => {
-                    // Navigate to the specified path after 3 seconds
                     navigate('/');
                 }, 3000);
                 setTimeout(() => {
