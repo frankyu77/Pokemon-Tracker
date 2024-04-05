@@ -119,12 +119,13 @@ app.post('/insert', async (req, res) => {
         if (insertResult) {
             await db.executeQuery('commit');
             res.json({ success: true });
-        } else {
-            res.status(500).json({ success: false });
         }
+        // else {
+        //     res.status(500).json({ success: false, error: er });
+        // }
     } catch (err) {
         console.error('Error inserting: ', err);
-        res.status(500).json({ success: false });
+        res.status(500).json({ success: false, message: err.message});
     }
 });
 

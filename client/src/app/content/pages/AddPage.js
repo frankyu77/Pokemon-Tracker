@@ -38,10 +38,13 @@ function AddPage(props) {
                     window.location.reload();
                 }, 3000);
             } else {
-                setInsertMsg(responseData.message|| "Error inserting!");
+                console.log("HITTTTTTTTT")
+                setInsertMsg(responseData.message);
                 console.log("Error inserting data!");
+                console.log("Message", responseData.message);
             }
         } catch (err) {
+            setInsertMsg(`Error inserting gym: ${err.message}`);
             console.log("ERRORRRRRRRR");
         }
     }
