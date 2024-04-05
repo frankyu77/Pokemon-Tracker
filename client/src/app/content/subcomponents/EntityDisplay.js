@@ -16,7 +16,9 @@ function EntityDisplay(props) {
                 <Link to='/addpage' state={props.name}>
                     <button id="add-button">Add</button>
                 </Link>
+                <Link to='/removepage' state={props.name}>
                 <button id="remove-button">Remove</button>
+                </Link>
             </div>
         </div>
 

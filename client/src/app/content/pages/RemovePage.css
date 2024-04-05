@@ -1,0 +1,18 @@
+#remove-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#remove-form {
+    width: 300px;
+}
+
+#input-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-top: 20px;
+}

@@ -3,6 +3,7 @@ import './ContentDisplay.css';
 import AddPage from './pages/AddPage';
 import MainPage from './pages/MainPage'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import RemovePage from './pages/RemovePage';
 
 function ContentDisplay() {
     const [formattedData, setFormattedData] = useState([]);
@@ -84,41 +85,41 @@ function ContentDisplay() {
 
     const attributes = {
         game: ['GameID', 'Game_Difficulty', 'Generation'],
-        items: ['Item#', 'Rarity', 'GameID', 'ItemName'],
+        items_has: ['Item#', 'Rarity', 'GameID', 'ItemName'],
         gym_includes: ['Gym#', 'Difficulty', 'Type', 'GameID'],
         region_apartof : ['RegionName', 'Type', "Gym#", "GameID"],
         enterableAreas : ['Area#', 'Type'],
         leadsTo : ['RegionName', 'Area#'],
-        typeWeakness : ['Type', 'Weakness'],
-        peopleHas: ['PID', 'GameID'],
-        pokemon: ['Name', 'Type1', 'Type2', 'SpecialAttack', 'Caught_Since', 'PID'],
-        badgeGym: ['Badge', 'Gym#', 'GameID'],
-        gymMasters: ['PID', 'Name', 'Badge', 'Owns_Since'],
-        roleCatchPhrase : ['Role', 'Catch_Phrase'],
-        NPCLivesIn: ['PID', 'Name', 'Role', 'RegionName'],
-        trainers: ['PID', 'Name', 'Fav_Pokemon'],
-        difficultyReward : ['Difficulty', 'Reward'],
-        quests: ['QuestID', 'Difficulty', 'PID', 'Date_Accepted']
+        type_Weakness : ['Type', 'Weakness'],
+        people_Has: ['PID', 'GameID'],
+        pokemon_caught: ['Name', 'Type1', 'Type2', 'SpecialAttack', 'Caught_Since', 'PID'],
+        badge_Gym: ['Badge', 'Gym#', 'GameID'],
+        GYMMASTER_OWNS: ['PID', 'Name', 'Badge', 'Owns_Since'],
+        role_CatchPhrase : ['Role', 'Catch_Phrase'],
+        NPC_LivesIn: ['PID', 'Name', 'Role', 'RegionName'],
+        trainer: ['PID', 'Name', 'Fav_Pokemon'],
+        difficulty_Reward : ['Difficulty', 'Reward'],
+        quest_assigned: ['QuestID', 'Difficulty', 'PID', 'Date_Accepted']
     };
 
     const data = {
         game: gameData,
         //game: [['Game ID', 'Difficulty', 'Generation'], ['asdf', 'asdf', 'asdf']],
-        items: itemData,
+        items_has: itemData,
         gym_includes: gymIncludesData,
         region_apartof : regionApartofData,
         enterableAreas : enterableAreasData,
         leadsTo : leadsToData,
-        typeWeakness : typeWeaknessData,
-        peopleHas: peopleHasData,
-        pokemon: pokemonData,
-        badgeGym: badgeGymData,
-        gymMasters: gymMastersData,
-        roleCatchPhrase : roleCatchPhraseData,
-        NPCLivesIn: NPCLivesInData,
-        trainers: trainersData,
-        difficultyReward : difficultyRewardData,
-        quests: questsData
+        type_Weakness : typeWeaknessData,
+        people_Has: peopleHasData,
+        pokemon_caught: pokemonData,
+        badge_Gym: badgeGymData,
+        GYMMASTER_OWNS: gymMastersData,
+        role_CatchPhrase : roleCatchPhraseData,
+        NPC_LivesIn: NPCLivesInData,
+        trainer: trainersData,
+        difficulty_Reward : difficultyRewardData,
+        quest_assigned: questsData
     };
 
     return (
@@ -127,6 +128,7 @@ function ContentDisplay() {
                 <Routes>
                     <Route exact path="/" element={<MainPage attributes={attributes} data={data} />} />
                     <Route exact path="/addpage" element={<AddPage attributes={attributes} data={data} />} />
+                    <Route exact path="/removepage" element={<RemovePage attributes={attributes} data={data} />} />
                 </Routes>
             </Router>
         </div>

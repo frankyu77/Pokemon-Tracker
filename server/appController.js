@@ -110,7 +110,6 @@ app.post('/updateRegion', async (req, res) => {
 });
 
 app.post('/insert', async (req, res) => {
-
     try {
         const sql = `INSERT INTO ${req.body.tableName} (${Object.keys(req.body.input).join(', ')})
                              VALUES (${Object.values(req.body.input).join(', ')})`;
@@ -124,6 +123,24 @@ app.post('/insert', async (req, res) => {
         }
     } catch (err) {
         console.error('Error inserting: ', err);
+        res.status(500).json({ success: false });
+    }
+});
+
+app.post('/remove', async (req, res) => {
+    try {
+        const sql = `DELETE FROM ${req.body.tableName} WHERE ${req.body.primaryKey} = ${req.body.input}`
+
+        const insertResult = await db.executeQuery(sql);
+
+        if (insertResult) {
+            await db.executeQuery('commit');
+            res.json({ success: true });
+        } else {
+            res.status(500).json({ success: false });
+        }
+    } catch (err) {
+        console.error('Error removing: ', err);
         res.status(500).json({ success: false });
     }
 });
