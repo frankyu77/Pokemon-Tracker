@@ -75,12 +75,13 @@ function TESTJOIN() {
 
     return (
         <div>
-            <h2> JOIN POKEMON_CAUGHT and PEOPLE_HAS </h2>
+            <h4> JOIN POKEMON_CAUGHT and PEOPLE_HAS </h4>
             <form id="joinPokemonTables" style={{display: 'inline-block'}}>
                 WHERE: <input type="text" id="whereclause" placeholder="Common Attribute" required/>
+                <br/>
                 <button type="submit"> Enter</button>
             </form>
-            <div style={{display: 'inline-block'}}>
+            <div style={{display: 'inline-block', marginLeft: '-10rem'}}>
                 <button onClick={clearPokemonList}> Clear Pokémon List</button>
             </div>
             <div id="joinResultPokemonMsg">{insertResultMsg}</div>

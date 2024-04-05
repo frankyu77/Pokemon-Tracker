@@ -42,13 +42,14 @@ function TESTING2() {
 
     return (
         <div>
-            <h2>Projection</h2>
+            <h3>Projection</h3>
 
-            <div>
+            <div style={{marginLeft: '10px'}}>
                 <label>
                     Table Name:
                     <input type="text" onChange={(event) => setTableName(String(event.target.value).toLowerCase())} />
                 </label>
+                <br />
                 <br />
                 <label>
                     Fields:
@@ -56,8 +57,8 @@ function TESTING2() {
                 </label>
             </div>
 
-            <button onClick={fetchData}>Projection</button>
-            <button onClick={clearTableList}>Clear List</button>
+            <button onClick={fetchData} style={{marginBottom: '3px', marginLeft: '10px'}}>Projection</button>
+            <button onClick={clearTableList} style={{marginTop: '0px', marginLeft: '3px'}}>Clear List</button>
 
             {isTableVisible && tableList.length > 0 && (
                 <table>

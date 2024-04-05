@@ -33,20 +33,26 @@ function AggregateQueryButton(props) {
         }
     }, [tableList]);
 
+    const clearTableList = () => {
+        setTableList([]);
+    };
+
     return (
         <div>
-            <h2>{String(props.aggregateName).toUpperCase()}</h2>
+            <h3>{String(props.aggregateName).toUpperCase()}</h3>
             <button onClick={fetchTableList}>Get value</button>
+            <button onClick={clearTableList}>Clear</button>
             <table>
                 <tbody>
-                    {tableList.map((item, index) => (
-                        <tr key={index}>
-                            <td>{String(props.aggregateName).toUpperCase()}: </td>
-                            <td>{String(Object.values(item)[0]).toUpperCase()}</td>
-                        </tr>
-                    ))}
+                {tableList.map((item, index) => (
+                    <tr key={index}>
+                        <td>{String(props.aggregateName).toUpperCase()}:</td>
+                        <td>{String(Object.values(item)[0]).toUpperCase()}</td>
+                    </tr>
+                ))}
                 </tbody>
             </table>
+
         </div>
     );
 }

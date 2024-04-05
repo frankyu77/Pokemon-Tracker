@@ -44,8 +44,8 @@ function UPDATEPOKEMON() {
 
     return (
         <div>
-            <h2>Update Pokémon Region Gym</h2>
-            <form onSubmit={updateRegionGym}>
+            <h3>Update Pokémon Region Gym</h3>
+            <form onSubmit={updateRegionGym} style={{marginLeft: '10px'}}>
                 <label>
                     Region Name:
                     <input type="text" value={regionName} onChange={(e) => setRegionName(e.target.value)} required />
