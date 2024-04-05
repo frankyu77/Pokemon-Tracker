@@ -456,6 +456,11 @@ insert into people_has(pid, gameid) values(79, 8);
 insert into people_has(pid, gameid) values(80, 8);
 insert into people_has(pid, gameid) values(81, 8);
 insert into people_has(pid, gameid) values(82, 8);
+INSERT INTO PEOPLE_HAS VALUES (30, 0);
+INSERT INTO PEOPLE_HAS VALUES (31, 0);
+INSERT INTO PEOPLE_HAS VALUES (32, 0);
+INSERT INTO PEOPLE_HAS VALUES (33, 0);
+INSERT INTO PEOPLE_HAS VALUES (34, 0);
 
 
 insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Bulbasaur', 'grass', 'poison', 'Max Overgrowth', '21-03-2020', 1);
@@ -534,6 +539,11 @@ insert into npc_livesin(pid, name, role, regionname) values (79, 'Fisherman Joe'
 insert into npc_livesin(pid, name, role, regionname) values (80, 'Fisherman Joe', 'Fisherman', 'Accumula Town');
 insert into npc_livesin(pid, name, role, regionname) values (81, 'Fisherman Joe', 'Fisherman', 'Blackthorn City');
 insert into npc_livesin(pid, name, role, regionname) values (82, 'Fisherman Joe', 'Fisherman', 'Pastoria City');
+INSERT INTO NPC_LIVESIN VALUES (32, 'Nurse Bob', 'Nurse', 'Celestic City');
+INSERT INTO NPC_LIVESIN VALUES (33, 'Cyclist Bob', 'Cyclist', 'Celestic City');
+INSERT INTO NPC_LIVESIN VALUES (34, 'Walker Bob', 'Walker', 'Celestic City');
+INSERT INTO NPC_LIVESIN VALUES (30, 'Professor Bob', 'Professor', 'Celestic City');
+INSERT INTO NPC_LIVESIN VALUES (31, 'Fisherman Bob', 'Fisherman', 'Celestic City');
 
 
 insert into trainer(pid, name, fav_pokemon) values(9, 'Ash', 'Pikachu');
