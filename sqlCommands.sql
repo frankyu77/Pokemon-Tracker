@@ -77,7 +77,7 @@ CREATE TABLE POKEMON_CAUGHT
     "TYPE1"         VARCHAR2(10) NOT NULL,
     "TYPE2"         VARCHAR2(10),
     "SPECIALATTACK" VARCHAR2(20),
-    "CAUGHT_SINCE"  DATE,
+    "CAUGHT_SINCE"  VARCHAR2(20),
     "PID"           NUMBER,
     PRIMARY KEY ("NAME"),
     FOREIGN KEY ("PID")
@@ -103,7 +103,7 @@ CREATE TABLE GYMMASTER_OWNS
     "PID"        NUMBER,
     "NAME"       VARCHAR2(25),
     "BADGE"      VARCHAR2(15),
-    "OWNS_SINCE" DATE,
+    "OWNS_SINCE" VARCHAR2(20),
     PRIMARY KEY ("PID"),
     FOREIGN KEY ("PID")
         REFERENCES PEOPLE_HAS ON DELETE CASCADE,
@@ -155,7 +155,7 @@ CREATE TABLE QUEST_ASSIGNED
     "QUESTID"       NUMBER,
     "DIFFICULTY"    VARCHAR2(15),
     "PID"           NUMBER,
-    "DATE_ACCEPTED" DATE,
+    "DATE_ACCEPTED" VARCHAR2(20),
     PRIMARY KEY ("QUESTID"),
     FOREIGN KEY ("PID")
         REFERENCES TRAINER ON DELETE CASCADE,
@@ -458,24 +458,24 @@ insert into people_has(pid, gameid) values(81, 8);
 insert into people_has(pid, gameid) values(82, 8);
 
 
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Bulbasaur', 'grass', 'poison', 'Max Overgrowth', to_date('21-03-2020', 'DD-MM-YYYY'), 1);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Venusaur', 'grass', 'poison', 'Trailblze', to_date('21-05-2020', 'DD-MM-YYYY'), 1);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Charizard', 'fire', 'flying', 'Inferno', to_date('21-02-2022', 'DD-MM-YYYY'), 1);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Blastoise', 'water', 'Hydro Pump', to_date('21-01-2020', 'DD-MM-YYYY'), 0);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Beedrill', 'bug', 'poison', 'Poison Jab', to_date('07-01-2015', 'DD-MM-YYYY'), 8);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Butterfree', 'bug', 'flying', 'Supersonic', to_date('10-09-2010', 'DD-MM-YYYY'), 6);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Pidgeot', 'normal', 'flying', 'Gust', to_date('19-09-2004', 'DD-MM-YYYY'), 4);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Rattata', 'normal', 'Super Fang', to_date('11-12-2002', 'DD-MM-YYYY'), 5);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Arbok', 'poison', 'Glare', to_date('19-10-2023', 'DD-MM-YYYY'), 5);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Pikachu', 'electric', 'Thunderbold', to_date('13-09-2000', 'DD-MM-YYYY'), 9);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Sandslash', 'ground', 'Scorching Sands', to_date('23-10-2000', 'DD-MM-YYYY'), 9);
-insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Ninetales', 'fire', 'Solar Beam', to_date('07-12-2013', 'DD-MM-YYYY'), 9);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Magneton', 'electric', 'steel', 'Thunder Shock', to_date('17-10-2006', 'DD-MM-YYYY'), 2);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Muk', 'poison', 'dark', 'Sludge Bomb', to_date('12-11-2001', 'DD-MM-YYYY'), 2);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Gengar', 'ghost', 'poison', 'Shadow Ball', to_date('13-05-2007', 'DD-MM-YYYY'), 7);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Onix', 'rock', 'ground', 'Rock Slide', to_date('21-04-2008', 'DD-MM-YYYY'), 7);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Rhydon', 'ground', 'rock', 'Mud Slap', to_date('24-12-2010', 'DD-MM-YYYY'), 3);
-insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Scyther', 'bug', 'flying', 'Aerial Strike', to_date('14-11-2011', 'DD-MM-YYYY'), 3);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Bulbasaur', 'grass', 'poison', 'Max Overgrowth', '21-03-2020', 1);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Venusaur', 'grass', 'poison', 'Trailblze', '21-05-2020', 1);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Charizard', 'fire', 'flying', 'Inferno', '21-02-2022', 1);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Blastoise', 'water', 'Hydro Pump', '21-01-2020', 0);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Beedrill', 'bug', 'poison', 'Poison Jab', '07-01-2015', 8);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Butterfree', 'bug', 'flying', 'Supersonic', '10-09-2010', 6);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Pidgeot', 'normal', 'flying', 'Gust', '19-09-2004', 4);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Rattata', 'normal', 'Super Fang', '11-12-2002', 5);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Arbok', 'poison', 'Glare', '19-10-2023', 5);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Pikachu', 'electric', 'Thunderbold', '13-09-2000', 9);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Sandslash', 'ground', 'Scorching Sands', '23-10-2000', 9);
+insert into pokemon_caught(name, type1, specialattack, caught_since, pid) values('Ninetales', 'fire', 'Solar Beam', '07-12-2013', 9);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Magneton', 'electric', 'steel', 'Thunder Shock', '17-10-2006', 2);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Muk', 'poison', 'dark', 'Sludge Bomb', '12-11-2001', 2);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Gengar', 'ghost', 'poison', 'Shadow Ball', '13-05-2007', 7);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Onix', 'rock', 'ground', 'Rock Slide', '21-04-2008', 7);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Rhydon', 'ground', 'rock', 'Mud Slap', '24-12-2010', 3);
+insert into pokemon_caught(name, type1, type2, specialattack, caught_since, pid) values('Scyther', 'bug', 'flying', 'Aerial Strike', '14-11-2011', 3);
 
 
 insert into badge_gym(badge, gym#, gameid) values('Volcano Badge', 44, 0);
@@ -485,11 +485,11 @@ insert into badge_gym(badge, gym#, gameid) values('Cascade Badge', 52, 8);
 insert into badge_gym(badge, gym#, gameid) values('Boulder Badge', 60, 7);
 
 
-insert into gymmaster_owns(pid, name, badge, owns_since) values(16, 'Gym Master Brock', 'Boulder Badge', to_date('13-01-2019', 'DD-MM-YYYY'));
-insert into gymmaster_owns(pid, name, badge, owns_since) values(17, 'Gym Master Mist', 'Cascade Badge', to_date('10-03-2005', 'DD-MM-YYYY'));
-insert into gymmaster_owns(pid, name, badge, owns_since) values(18, 'Gym Master Erika', 'Rainbow Badge', to_date('20-02-2000', 'DD-MM-YYYY'));
-insert into gymmaster_owns(pid, name, badge, owns_since) values(19, 'Gym Master Sabrina', 'Marsh Badge', to_date('01-01-2001', 'DD-MM-YYYY'));
-insert into gymmaster_owns(pid, name, badge, owns_since) values(20, 'Gym Master Blaine', 'Volcano Badge', to_date('13-11-2007', 'DD-MM-YYYY'));
+insert into gymmaster_owns(pid, name, badge, owns_since) values(16, 'Gym Master Brock', 'Boulder Badge', '13-01-2019');
+insert into gymmaster_owns(pid, name, badge, owns_since) values(17, 'Gym Master Mist', 'Cascade Badge', '10-03-2005');
+insert into gymmaster_owns(pid, name, badge, owns_since) values(18, 'Gym Master Erika', 'Rainbow Badge', '20-02-2000');
+insert into gymmaster_owns(pid, name, badge, owns_since) values(19, 'Gym Master Sabrina', 'Marsh Badge', '01-01-2001');
+insert into gymmaster_owns(pid, name, badge, owns_since) values(20, 'Gym Master Blaine', 'Volcano Badge', '13-11-2007');
 
 
 insert into role_catchphrase(role, catch_phrase) values('Store Owner', 'Hey how can I help you?');
@@ -554,8 +554,8 @@ insert into difficulty_reward(difficulty, reward) values('Super Hard', '800 Poke
 insert into difficulty_reward(difficulty, reward) values('Impossible', '2000 Poke Coins');
 
 
-insert into quest_assigned(questid, difficulty, pid, date_accepted) values(1, 'Easy', 3, to_date('13-01-2020', 'DD-MM-YYYY'));
-insert into quest_assigned(questid, difficulty, pid, date_accepted) values(2, 'Easy', 9, to_date('16-04-2021', 'DD-MM-YYYY'));
-insert into quest_assigned(questid, difficulty, pid, date_accepted) values(3, 'Medium', 1, to_date('16-06-2021', 'DD-MM-YYYY'));
-insert into quest_assigned(questid, difficulty, pid, date_accepted) values(4, 'Hard', 1, to_date('17-12-2019', 'DD-MM-YYYY'));
-insert into quest_assigned(questid, difficulty, pid, date_accepted) values(5, 'Impossible', 6, to_date('26-04-2020', 'DD-MM-YYYY'));
+insert into quest_assigned(questid, difficulty, pid, date_accepted) values(1, 'Easy', 3, '13-01-2020');
+insert into quest_assigned(questid, difficulty, pid, date_accepted) values(2, 'Easy', 9, '16-04-2021');
+insert into quest_assigned(questid, difficulty, pid, date_accepted) values(3, 'Medium', 1, '16-06-2021');
+insert into quest_assigned(questid, difficulty, pid, date_accepted) values(4, 'Hard', 1, '17-12-2019');
+insert into quest_assigned(questid, difficulty, pid, date_accepted) values(5, 'Impossible', 6, '26-04-2020');
