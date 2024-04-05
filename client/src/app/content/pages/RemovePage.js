@@ -9,7 +9,7 @@ function RemovePage(props) {
 
     const primaryKey = String(props.attributes[name][0]).toLowerCase();
 
-    const [input, setInput] = useState("");
+    const [input, setInput] = useState();
 
     async function removeData(input) {
         try {
@@ -42,7 +42,7 @@ function RemovePage(props) {
             <form id="remove-form">
                 <label id="input-area">
                     <span>{primaryKey}: </span>
-                    <input type="text" onBlur={event => setInput(event.target.value)}></input>
+                    <input type="text" onBlur={event => setInput(Number(event.target.value) || `'${event.target.value}'`)}></input>
                 </label>
             </form>
 

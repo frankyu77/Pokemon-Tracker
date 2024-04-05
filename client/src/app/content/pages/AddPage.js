@@ -59,7 +59,7 @@ const populateForm = (input, attributes) => {
 };
 
 function updateInput(input, attribute, event) {
-    input[String(attribute).toLowerCase()] = event.target.value
+    input[String(attribute).toLowerCase()] = Number(event.target.value) || `'${event.target.value}'`;
 }
 
 export default AddPage
