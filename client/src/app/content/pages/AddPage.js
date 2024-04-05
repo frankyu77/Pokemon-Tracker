@@ -1,12 +1,18 @@
 import './AddPage.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useNavigate, useLocation} from 'react-router-dom'
+import React, {useState} from "react";
 
 function AddPage(props) {
-
+    const [insertResultMsg, setInsertMsg] = useState("");
     const name = useLocation().state['name'];
     const tableName = useLocation().state['tableName'];
+    const navigate = useNavigate();
 
     const input = {}
+
+    const handleClick = () => {
+        navigate('/');
+    };
 
     async function insertTable(input) {
         try {
@@ -24,8 +30,15 @@ function AddPage(props) {
 
             if (responseData.success) {
                 console.log('Inserted successfully');
-                window.location.reload();
+                setInsertMsg("Inserted successfully!");
+                setTimeout(() => {
+                    navigate('/');
+                }, 3000);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
             } else {
+                setInsertMsg(responseData.message|| "Error inserting!");
                 console.log("Error inserting data!");
             }
         } catch (err) {
@@ -36,10 +49,8 @@ function AddPage(props) {
     return (
         <div id="add-page">
             <form id="add-form">{populateForm(input, props.attributes[name])}</form>
-
-            <Link to='/'>
                 <button onClick={() => insertTable(input)}>Add</button>
-            </Link>
+            {insertResultMsg && <p>{insertResultMsg}</p>}
         </div>
     );
 }
@@ -53,6 +64,7 @@ const populateForm = (input, attributes) => {
             <label id="input-area">
                 <span>{attribute}: </span>
                 <input type="text" onBlur={event => updateInput(input, attribute, event)}></input>
+
             </label>)
     }
 
