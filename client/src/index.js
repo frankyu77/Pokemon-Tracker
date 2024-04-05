@@ -27,8 +27,6 @@ root.render(
           <div className="container">
                 <h1 id='title'>Pokemon Game</h1>
                 <div>
-                      <TESTINGAPP />
-                      <REMOVE />
                       <TESTING2/>
                       <TESTJOIN />
                       <NEWSELECTION />

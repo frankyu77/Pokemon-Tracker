@@ -180,7 +180,7 @@ app.post('/projection', async (req, res) => {
     } catch (error) {
         // Handle errors
         console.error(`Error fetching ${req.body.tableName} data:, error`);
-        res.status(500).json({ success: false, error: error.message });
+        res.status(500).json({ success: false, error: error.message, message: error.message});
     }
 });
 
