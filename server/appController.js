@@ -109,6 +109,25 @@ app.post('/updateRegion', async (req, res) => {
     }
 });
 
+app.post('/insert', async (req, res) => {
+
+    try {
+        const sql = `INSERT INTO ${req.body.tableName} (${Object.keys(req.body.input).join(', ')})
+                             VALUES (${Object.values(req.body.input).join(', ')})`;
+        const insertResult = await db.executeQuery(sql);
+
+        if (insertResult) {
+            await db.executeQuery('commit');
+            res.json({ success: true });
+        } else {
+            res.status(500).json({ success: false });
+        }
+    } catch (err) {
+        console.error('Error inserting: ', err);
+        res.status(500).json({ success: false });
+    }
+});
+
 
 
 app.post('/join-pokemon-people', async (req, res) => {
@@ -127,25 +146,6 @@ app.post('/join-pokemon-people', async (req, res) => {
 });
 
 // -------------------------------------------------------------------------------------------------------PokemonService
-app.post('/insert', async (req, res) => {
-
-    try {
-        const sql = `INSERT INTO Pokemon_Caught (${Object.keys(req.body.input).join(', ')})
-                             VALUES (:1, :2, :3, :4, :5, :6)`;
-        const bindings = Object.values(req.body.input);
-        const insertResult = await db.executeQuery(sql, bindings);
-
-        if (insertResult) {
-            await db.executeQuery('commit');
-            res.json({ success: true });
-        } else {
-            res.status(500).json({ success: false });
-        }
-    } catch (err) {
-        console.error('Error inserting: ', err);
-        res.status(500).json({ success: false });
-    }
-});
 
 app.post('/remove-pokemon-caught', async (req, res) => {
     const { name } = req.body;

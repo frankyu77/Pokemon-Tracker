@@ -10,7 +10,7 @@ function AddPage(props) {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({input: input})
+                body: JSON.stringify({ tableName: props.tableName, input: input })
             })
 
             console.log("after fetch");
@@ -50,7 +50,7 @@ const populateForm = (input, attributes) => {
         form.push(
             <label id="input-area">
                 <span>{attribute}: </span>
-                <input type="text" onChange={event => updateInput(input, attribute, event)}></input>
+                <input type="text" onBlur={event => updateInput(input, attribute, event)}></input>
             </label>)
     }
 
@@ -58,12 +58,7 @@ const populateForm = (input, attributes) => {
 };
 
 function updateInput(input, attribute, event) {
-    if (['caught_since', 'owns_since', 'date_accepted'].includes(String(attribute).toLowerCase())) {
-        console.log(new Date(event.target.value).toLocaleDateString('en-GB'))
-        input[String(attribute).toLowerCase()] = `TO_DATE('${new Date(event.target.value).toLocaleDateString('en-GB')}', 'DD-MM-YYYY')`;
-    } else {
-        input[String(attribute).toLowerCase()] = event.target.value
-    }
+    input[String(attribute).toLowerCase()] = event.target.value
 }
 
 export default AddPage
