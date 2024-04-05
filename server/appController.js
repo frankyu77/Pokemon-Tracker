@@ -51,7 +51,7 @@ app.post('/select-start', async (req, res) => {
     const { tableName } = req.body;
 
     try {
-        `SELECT * FROM ${tableName}`;
+        const query = `SELECT * FROM ${tableName}`;
         console.log(query);
 
         const selectionResult = await db.executeQueryResult(query);
