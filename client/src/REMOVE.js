@@ -32,12 +32,9 @@ function REMOVE() {
             if (responseData.success) {
                 messageElement.textContent = "Data removed successfully!";
                 setInsertResultMsg("SUCCESS \n You Removed: " + pokemonName);
-                //setInsertResultMsg("Data inserted successfully!");
-
-                // fetchTableData();
             } else {
                 messageElement.textContent = "Error removing data!";
-                setIsError(true); // Set isError to true if there's an error
+                setIsError(true);
                 setInsertResultMsg("Error removing data!");
 
             }
@@ -49,9 +46,6 @@ function REMOVE() {
         }
     }
 
-    // window.onload = () => {
-    //     document.getElementById("insertPokemonTable").addEventListener("submit", insertPokemonTable);
-    // }
     useEffect(() => {
         document.getElementById("removePokemonTable").addEventListener("submit", removePokemonTable);
         return () => {
@@ -67,7 +61,6 @@ function REMOVE() {
 
                 <button type="submit"> Enter</button>
             </form>
-            {/*<div id="insertResultPokemonMsg">{insertResultMsg}</div>*/}
             <div id="removeResultPokemonMsg" className={isError ? "error" : "noError"}>{insertResultMsg}</div>
 
         </div>

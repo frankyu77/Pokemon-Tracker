@@ -11,9 +11,6 @@ function NEWSELECTION() {
         console.log("Form submitted!");
         console.log(selectedTypes);
 
-        // const selectedAndConditions = selectedTypes.map(type => "type1 = '" + type + "'");
-
-        // console.log(selectedAndConditions);
         console.log(selectedANDs);
 
         const orClause = selectedTypes.join(' OR ');
@@ -91,15 +88,9 @@ function NEWSELECTION() {
     const handleTypeChange = (event) => {
         const type = event.target.value;
         if (event.target.checked) {
-            const selectedANDsCopy = [...selectedANDs]; // Create a copy of selectedANDs
+            const selectedANDsCopy = [...selectedANDs];
             setSelectedTypes([...selectedTypes.filter(item => !selectedANDsCopy.includes(item)), type]);
             setSelectedANDs(selectedANDs.filter(item => item !== type));
-            selectedANDsCopy.forEach(orValue => {
-                if (selectedTypes.includes(orValue)) {
-                    console.log("Value from selectedANDs is already in selectedTypes");
-                    // Do whatever you need to do if the value from selectedORs is already in selectedTypes
-                }
-            });
         } else {
             setSelectedTypes(selectedTypes.filter(item => item !== type));
         }
@@ -175,10 +166,6 @@ function NEWSELECTION() {
                 </div>
                 <div>
                     <h4 style={{display: 'flex', marginLeft: '20px'}}>AND:</h4>
-                    {/*<div style={{display: 'flex', marginLeft: '10px'}}>*/}
-                    {/*    <input type="checkbox" id="pid3" value="pid = 3" onChange={handleOrChange}/>*/}
-                    {/*    <label htmlFor="pid3">reserved by pid 3</label>*/}
-                    {/*</div>*/}
                     <div style={{display: 'flex', marginLeft: '10px'}}>
                         <input type="checkbox" id="pid12" value="pid > 12" onChange={handleOrChange}/>
                         <label htmlFor="pid12">reserved by pid 12 or greater</label>
@@ -189,21 +176,16 @@ function NEWSELECTION() {
                     </div>
 
                 </div>
-                {/*<OrSelection handleOrChange={handleOrChange} />*/}
-
-
-                {/* Add more checkboxes for other types as needed */}
 
                 <button type="submit" style={{display: 'flex', marginLeft: '10px', marginBottom: '1rem'}}>
                 Enter
                 </button>
             </form>
-            {/*<div style={{display: 'inline-block'}}>*/}
-            {/*    <button onClick={clearPokemonList}> Deselect All</button>*/}
-            {/*</div>*/}
+
             <div style={{display: 'inline-block'}}>
                 <button onClick={clearPokemonList}> Clear Pokémon List</button>
             </div>
+
             <div id="newSelectionResultMsg">{insertResultMsg}</div>
         </div>
     );

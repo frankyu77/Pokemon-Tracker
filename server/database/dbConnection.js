@@ -33,9 +33,6 @@ class dbConnection {
             throw new Error('Database connection has not set');
         }
         try {
-            // const result = await this.connection.execute(sql, bindings);
-            // await this.connection.commit();
-            // return result;
             return await this.connection.execute(sql, bindings, { autoCommit: true });
 
 
@@ -51,7 +48,6 @@ class dbConnection {
         }
         try {
             const result = await this.connection.execute(sql, bindings);
-            // Assuming result.rows contains the fetched data
             console.log("successful");
             return result.rows;
         } catch (err) {

@@ -23,17 +23,11 @@ function TESTJOIN() {
             })
 
             console.log("after fetch");
-            // if (!response.ok) {
-            //     throw new Error('Network response was not ok');
-            // }
 
             const responseData = await response.json();
 
             const messageElement = document.getElementById("joinResultPokemonMsg");
             if (responseData.success) {
-                // messageElement.textContent = "Data joined successfully!";
-                // setInsertResultMsg("SUCCESS \n You Removed: " + pokemonName);
-                // setInsertResultMsg(responseData.data);
                 const attribute = Object.keys(responseData.data[0]);
                 const dataRows = responseData.data.map((entry, index) => (
                     <tr key={index}>
@@ -57,7 +51,6 @@ function TESTJOIN() {
                     </table>
                 );
                 setInsertResultMsg(table);
-                // fetchTableData();
             } else {
                 throw new Error(responseData.error);
             }
@@ -73,9 +66,6 @@ function TESTJOIN() {
         setInsertResultMsg("");
     };
 
-    // window.onload = () => {
-    //     document.getElementById("insertPokemonTable").addEventListener("submit", insertPokemonTable);
-    // }
     useEffect(() => {
         document.getElementById("joinPokemonTables").addEventListener("submit", joinPokemonTable);
         return () => {

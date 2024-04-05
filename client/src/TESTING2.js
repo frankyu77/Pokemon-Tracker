@@ -17,10 +17,6 @@ function TESTING2() {
                 body: JSON.stringify({ fields: selectedFields, tableName: tableName })
             });
 
-            // if (!response.ok) {
-            //     throw new Error('Failed to fetch projection data');
-            // }
-
             const data = await response.json();
             console.log("reach");
             if (data.success) {

@@ -27,7 +27,7 @@ function EntityDisplay(props) {
 
 const populateTable = (attributes, rawData) => {
     if (!attributes || !rawData || rawData.length === 0) {
-        return null; // Handle empty data gracefully
+        return null;
     }
 
     const table = [];

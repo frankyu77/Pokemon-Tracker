@@ -45,7 +45,6 @@ function ContentDisplay() {
             const queryResult = responseData.data;
 
             const formattedData = [];
-            // formattedData.push(['Name', 'Type1', 'Type2', 'Special Attack', 'Caught Since', 'PID']);
 
             if (responseData.success) {
                 queryResult.forEach((item) => {
@@ -57,7 +56,7 @@ function ContentDisplay() {
 
             setFormattedData(formattedData);
 
-            return formattedData; // Return the formatted data
+            return formattedData;
         } catch (err) {
             console.log(err);
             return [];
@@ -104,7 +103,6 @@ function ContentDisplay() {
 
     const data = {
         game: gameData,
-        //game: [['Game ID', 'Difficulty', 'Generation'], ['asdf', 'asdf', 'asdf']],
         items_has: itemData,
         gym_includes: gymIncludesData,
         region_apartof : regionApartofData,
