@@ -2,9 +2,10 @@ import React, { useEffect, useState, useCallback } from 'react';
 
 function TESTING2() {
     const [tableList, setTableList] = useState([]);
-    const [isTableHeaderVisible, setIsTableHeaderVisible] = useState(false);
+    const [isTableVisible, setIsTableVisible] = useState(false);
     const [selectedFields, setSelectedFields] = useState([]);
     const [tableName, setTableName] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const fetchData = useCallback(async () => {
         try {
@@ -16,25 +17,31 @@ function TESTING2() {
                 body: JSON.stringify({ fields: selectedFields, tableName: tableName })
             });
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            // if (!response.ok) {
+            //     throw new Error('Failed to fetch projection data');
+            // }
 
             const data = await response.json();
+            console.log("reach");
             if (data.success) {
                 setTableList(data.data);
-                setIsTableHeaderVisible(true);
+                setIsTableVisible(true);
+                setErrorMessage('');
             } else {
-                console.error(`Failed to fetch projection data:`, data.error);
+                setIsTableVisible(false);
+                setErrorMessage('Table name or field does not exist');
             }
         } catch (error) {
-            console.error(`Error fetching projection data:`, error);
+            console.error('Error fetching projection data:', error);
+            setIsTableVisible(false);
+            setErrorMessage('Error fetching projection data. Please try again later.');
         }
     }, [selectedFields, tableName]);
 
     const clearTableList = () => {
         setTableList([]);
-        setIsTableHeaderVisible(false);
+        setIsTableVisible(false);
+        setErrorMessage('');
     };
 
     return (
@@ -44,38 +51,39 @@ function TESTING2() {
             <div>
                 <label>
                     Table Name:
-                    <input type="text" onChange={(event) => setTableName(String(event.target.value).toLowerCase())}></input>
+                    <input type="text" onChange={(event) => setTableName(String(event.target.value).toLowerCase())} />
                 </label>
-                <br></br>
+                <br />
                 <label>
                     Fields:
-                    <input type="text" onChange={(event) => setSelectedFields(String(event.target.value).toUpperCase().replaceAll(' ', '').split(','))}></input>
+                    <input type="text" onChange={(event) => setSelectedFields(String(event.target.value).toUpperCase().replaceAll(' ', '').split(','))} />
                 </label>
             </div>
 
-            <button onClick={fetchData}> Projection</button>
-            <button onClick={clearTableList}> Clear List</button>
+            <button onClick={fetchData}>Projection</button>
+            <button onClick={clearTableList}>Clear List</button>
 
-            {isTableHeaderVisible && ( // Conditionally render the table header
+            {isTableVisible && tableList.length > 0 && (
                 <table>
                     <thead>
-                        <tr>
-                            {selectedFields.map(fieldName => (
-                                <th key={fieldName}>{fieldName}</th>
-                            ))}
-                        </tr>
+                    <tr>
+                        {selectedFields.map(fieldName => (
+                            <th key={fieldName}>{fieldName}</th>
+                        ))}
+                    </tr>
                     </thead>
                     <tbody>
-                        {tableList.map((item, index) => (
-                            <tr key={index}>
-                                {selectedFields.map(field => (
-                                    <td key={field}>{item[field]}</td>
-                                ))}
-                            </tr>
-                        ))}
+                    {tableList.map((item, index) => (
+                        <tr key={index}>
+                            {selectedFields.map(field => (
+                                <td key={field}>{item[field]}</td>
+                            ))}
+                        </tr>
+                    ))}
                     </tbody>
                 </table>
             )}
+            {errorMessage && <div className="error-message">{errorMessage}</div>}
         </div>
     );
 }
