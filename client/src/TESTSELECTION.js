@@ -12,6 +12,66 @@ function TESTSELECTION() {
         const where = document.getElementById("whereClause").value;
 
 
+        // try {
+        //     const response = await fetch('http://localhost:3001/selection', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({
+        //             tableName: whichTable,
+        //             whereClause: where
+        //         })
+        //     })
+        //
+        //     console.log("after fetch");
+        //     // if (!response.ok) {
+        //     //     throw new Error('Network response was not ok');
+        //     // }
+        //
+        //     const responseData = await response.json();
+        //
+        //     const messageElement = document.getElementById("selectionResultMsg");
+        //     if (responseData.success) {
+        //         document.getElementById("whichTable").value = "";
+        //         document.getElementById("whereClause").value = "";
+        //         // messageElement.textContent = "Data joined successfully!";
+        //         // setInsertResultMsg("SUCCESS \n You Removed: " + pokemonName);
+        //         // setInsertResultMsg(responseData.data);
+        //         const attribute = Object.keys(responseData.data[0]);
+        //         const dataRows = responseData.data.map((entry, index) => (
+        //             <tr key={index}>
+        //                 {attribute.map((key, idx) => (
+        //                     <td key={idx}>{entry[key]}</td>
+        //                 ))}
+        //             </tr>
+        //         ));
+        //         const table = (
+        //             <table>
+        //                 <thead>
+        //                 <tr>
+        //                     {attribute.map((key, idx) => (
+        //                         <th key={idx}>{key}</th>
+        //                     ))}
+        //                 </tr>
+        //                 </thead>
+        //                 <tbody>
+        //                 {dataRows}
+        //                 </tbody>
+        //             </table>
+        //         );
+        //         setInsertResultMsg(table);
+        //     } else {
+        //         messageElement.textContent = "Error removing data!";
+        //         setInsertResultMsg("Error removing data!");
+        //
+        //     }
+        // } catch (err) {
+        //     console.log("ERRORRRRRRRR");
+        //     console.log(err);
+        //     setInsertResultMsg(`Error selecting gym: ${err.message}`);
+        //     //setInsertResultMsg("Error removing data!");
+        // }
         try {
             const response = await fetch('http://localhost:3001/selection', {
                 method: 'POST',
@@ -22,22 +82,15 @@ function TESTSELECTION() {
                     tableName: whichTable,
                     whereClause: where
                 })
-            })
+            });
 
-            console.log("after fetch");
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
+            // if (!response.ok) {
+            //     throw new Error('Network response was not ok');
+            // }
 
             const responseData = await response.json();
 
-            const messageElement = document.getElementById("selectionResultMsg");
             if (responseData.success) {
-                document.getElementById("whichTable").value = "";
-                document.getElementById("whereClause").value = "";
-                // messageElement.textContent = "Data joined successfully!";
-                // setInsertResultMsg("SUCCESS \n You Removed: " + pokemonName);
-                // setInsertResultMsg(responseData.data);
                 const attribute = Object.keys(responseData.data[0]);
                 const dataRows = responseData.data.map((entry, index) => (
                     <tr key={index}>
@@ -62,14 +115,11 @@ function TESTSELECTION() {
                 );
                 setInsertResultMsg(table);
             } else {
-                messageElement.textContent = "Error removing data!";
-                setInsertResultMsg("Error removing data!");
-
+                throw new Error(responseData.error || 'Error fetching data');
             }
         } catch (err) {
-            console.log("ERRORRRRRRRR");
-            console.log(err);
-            setInsertResultMsg("Error removing data!");
+            console.error("Error selecting data:", err);
+            setInsertResultMsg(`Error selecting data: ${err.message}`);
         }
     }
 

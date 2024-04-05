@@ -27,11 +27,8 @@ root.render(
           <div className="container">
                 <h1 id='title'>Pokemon Game</h1>
                 <div>
-                      <TESTINGAPP />
-                      <REMOVE />
                       <TESTING2/>
                       <TESTJOIN />
-                      <TESTSELECTION />
                       <NEWSELECTION />
                       <UPDATEPOKEMON/>
                       <AggregateQueryButton aggregateName="average region count" fetchUrl="/average-region-count"/>
